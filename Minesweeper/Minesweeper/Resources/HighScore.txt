@@ -1,0 +1,5 @@
+ABC, Easy, 55
+DEF, Easy, 75
+GHI, Easy, 100
+JKL, Easy, 175
+MNO, Easy, 785

@@ -1,0 +1,14 @@
+C:\Users\zerop\source\repos\Minesweeper\Minesweeper\obj\Debug\Minesweeper.csprojAssemblyReference.cache
+C:\Users\zerop\source\repos\Minesweeper\Minesweeper\obj\Debug\Minesweeper.MainMenu.resources
+C:\Users\zerop\source\repos\Minesweeper\Minesweeper\obj\Debug\Minesweeper.PlayScreen.resources
+C:\Users\zerop\source\repos\Minesweeper\Minesweeper\obj\Debug\Minesweeper.Properties.Resources.resources
+C:\Users\zerop\source\repos\Minesweeper\Minesweeper\obj\Debug\Minesweeper.csproj.GenerateResource.cache
+C:\Users\zerop\source\repos\Minesweeper\Minesweeper\obj\Debug\Minesweeper.csproj.CoreCompileInputs.cache
+C:\Users\zerop\source\repos\Minesweeper\Minesweeper\bin\Debug\Minesweeper.exe.config
+C:\Users\zerop\source\repos\Minesweeper\Minesweeper\bin\Debug\Minesweeper.exe
+C:\Users\zerop\source\repos\Minesweeper\Minesweeper\bin\Debug\Minesweeper.pdb
+C:\Users\zerop\source\repos\Minesweeper\Minesweeper\obj\Debug\Minesweeper.exe
+C:\Users\zerop\source\repos\Minesweeper\Minesweeper\obj\Debug\Minesweeper.pdb
+C:\Users\zerop\source\repos\Minesweeper\Minesweeper\obj\Debug\Minesweeper.Resource1.resources
+C:\Users\zerop\source\repos\Minesweeper\Minesweeper\obj\Debug\Minesweeper.GameCell.resources
+C:\Users\zerop\source\repos\Minesweeper\Minesweeper\obj\Debug\Minesweeper.HighScore.resources
