@@ -1,0 +1,16 @@
+C:\Users\bryke\Desktop\OneDrive - Grand Canyon University\CST-227\Milestone\CST-227_Milestone\milestone_MineSweeper_ConsoleApp\bin\Debug\netcoreapp3.1\milestone_MineSweeper_ConsoleApp.exe
+C:\Users\bryke\Desktop\OneDrive - Grand Canyon University\CST-227\Milestone\CST-227_Milestone\milestone_MineSweeper_ConsoleApp\bin\Debug\netcoreapp3.1\milestone_MineSweeper_ConsoleApp.deps.json
+C:\Users\bryke\Desktop\OneDrive - Grand Canyon University\CST-227\Milestone\CST-227_Milestone\milestone_MineSweeper_ConsoleApp\bin\Debug\netcoreapp3.1\milestone_MineSweeper_ConsoleApp.runtimeconfig.json
+C:\Users\bryke\Desktop\OneDrive - Grand Canyon University\CST-227\Milestone\CST-227_Milestone\milestone_MineSweeper_ConsoleApp\bin\Debug\netcoreapp3.1\milestone_MineSweeper_ConsoleApp.runtimeconfig.dev.json
+C:\Users\bryke\Desktop\OneDrive - Grand Canyon University\CST-227\Milestone\CST-227_Milestone\milestone_MineSweeper_ConsoleApp\bin\Debug\netcoreapp3.1\milestone_MineSweeper_ConsoleApp.dll
+C:\Users\bryke\Desktop\OneDrive - Grand Canyon University\CST-227\Milestone\CST-227_Milestone\milestone_MineSweeper_ConsoleApp\bin\Debug\netcoreapp3.1\milestone_MineSweeper_ConsoleApp.pdb
+C:\Users\bryke\Desktop\OneDrive - Grand Canyon University\CST-227\Milestone\CST-227_Milestone\milestone_MineSweeper_ConsoleApp\bin\Debug\netcoreapp3.1\ClassLibrary.dll
+C:\Users\bryke\Desktop\OneDrive - Grand Canyon University\CST-227\Milestone\CST-227_Milestone\milestone_MineSweeper_ConsoleApp\bin\Debug\netcoreapp3.1\ClassLibrary.pdb
+C:\Users\bryke\Desktop\OneDrive - Grand Canyon University\CST-227\Milestone\CST-227_Milestone\milestone_MineSweeper_ConsoleApp\obj\Debug\netcoreapp3.1\milestone_MineSweeper_ConsoleApp.csprojAssemblyReference.cache
+C:\Users\bryke\Desktop\OneDrive - Grand Canyon University\CST-227\Milestone\CST-227_Milestone\milestone_MineSweeper_ConsoleApp\obj\Debug\netcoreapp3.1\milestone_MineSweeper_ConsoleApp.AssemblyInfoInputs.cache
+C:\Users\bryke\Desktop\OneDrive - Grand Canyon University\CST-227\Milestone\CST-227_Milestone\milestone_MineSweeper_ConsoleApp\obj\Debug\netcoreapp3.1\milestone_MineSweeper_ConsoleApp.AssemblyInfo.cs
+C:\Users\bryke\Desktop\OneDrive - Grand Canyon University\CST-227\Milestone\CST-227_Milestone\milestone_MineSweeper_ConsoleApp\obj\Debug\netcoreapp3.1\milestone_MineSweeper_ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\bryke\Desktop\OneDrive - Grand Canyon University\CST-227\Milestone\CST-227_Milestone\milestone_MineSweeper_ConsoleApp\obj\Debug\netcoreapp3.1\milestone_MineSweeper_ConsoleApp.csproj.CopyComplete
+C:\Users\bryke\Desktop\OneDrive - Grand Canyon University\CST-227\Milestone\CST-227_Milestone\milestone_MineSweeper_ConsoleApp\obj\Debug\netcoreapp3.1\milestone_MineSweeper_ConsoleApp.dll
+C:\Users\bryke\Desktop\OneDrive - Grand Canyon University\CST-227\Milestone\CST-227_Milestone\milestone_MineSweeper_ConsoleApp\obj\Debug\netcoreapp3.1\milestone_MineSweeper_ConsoleApp.pdb
+C:\Users\bryke\Desktop\OneDrive - Grand Canyon University\CST-227\Milestone\CST-227_Milestone\milestone_MineSweeper_ConsoleApp\obj\Debug\netcoreapp3.1\milestone_MineSweeper_ConsoleApp.genruntimeconfig.cache
