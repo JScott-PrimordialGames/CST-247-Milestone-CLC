@@ -29,10 +29,10 @@
                         @Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })
                     </li>
                 </ul>
-                <form class="form-inline mt-2 mt-md-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
+
+                @Html.ActionLink("Login", "/", "/", new { area = "" }, new { @class = "btn btn-outline-light my-2 mx-2" })
+                @Html.ActionLink("Register", "/", "/", new { area = "" }, new { @class = "btn btn-outline-register my-2" })
+
             </div>
         </nav>
     </header>
