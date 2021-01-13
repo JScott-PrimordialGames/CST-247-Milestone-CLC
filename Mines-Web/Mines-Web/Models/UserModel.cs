@@ -21,6 +21,9 @@ namespace Mines_Web.Models
         [StringLength(20, MinimumLength = 4, ErrorMessage = "Password must be between 4 and 20 characters")]
         public string Password { get; set; }
 
+        [Compare("Password")]
+        public string ComparePassword { get; set; }
+
         [Required]
         [DisplayName("First Name")]
         [StringLength(40, MinimumLength = 1)]
