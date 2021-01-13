@@ -8,12 +8,12 @@ using System.Web.Mvc;
 
 namespace Mines_Web.Controllers
 {
-    public class RegisterController : Controller
+    public class LoginAndRegisterController : Controller
     {
         // GET: Register
         public ActionResult Index()
         {
-            return View("Register");
+            return View("LoginAndRegister");
         }
 
         [HttpPost]
@@ -21,7 +21,7 @@ namespace Mines_Web.Controllers
         {
             // Validate the Form POST
             if (!ModelState.IsValid)
-                return View("Register");
+                return View("LoginAndRegister");
 
             SecurityService service = new SecurityService();
 
