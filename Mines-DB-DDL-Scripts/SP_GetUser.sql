@@ -1,4 +1,4 @@
-/****** Object:  StoredProcedure [dbo].[SP_GetUser]    Script Date: 1/14/2021 12:51:31 AM ******/
+/****** Object:  StoredProcedure [dbo].[SP_GetUser]    Script Date: 1/14/2021 1:50:43 AM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -11,7 +11,7 @@ CREATE PROCEDURE [dbo].[SP_GetUser]
 )
 AS
 BEGIN
-	SELECT [ID], [USERNAME], [FIRSTNAME], [LASTNAME], [EMAILADDRESS], [STATE], [AGE] FROM [DBO].[USERS] WHERE [ID] = @Id
+	SELECT [ID], [USERNAME], [FIRSTNAME], [LASTNAME], [EMAILADDRESS], [STATE], [AGE], [GENDER] FROM [DBO].[USERS] WHERE [ID] = @Id
 End
 GO
 

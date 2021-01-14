@@ -1,9 +1,10 @@
-/****** Object:  StoredProcedure [dbo].[SP_UpdateProfile_Admin]    Script Date: 1/14/2021 12:01:56 AM ******/
+/****** Object:  StoredProcedure [dbo].[SP_UpdateProfile_Admin]    Script Date: 1/14/2021 1:54:17 AM ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
+
 
 
 CREATE PROCEDURE [dbo].[SP_UpdateProfile_Admin]
@@ -15,6 +16,7 @@ CREATE PROCEDURE [dbo].[SP_UpdateProfile_Admin]
 	@EmailAddress nvarchar(40),
 	@State char(2),
 	@Age int,
+	@Gender char(1),
 	@UpdateSuccessful binary OUTPUT
 )
 AS
@@ -28,7 +30,8 @@ BEGIN
 				[LastName] = @LastName,
 				[EmailAddress] = @EmailAddress,
 				[State] = @State,
-				[Age] = @Age
+				[Age] = @Age,
+				[Gender] = @Gender
 			WHERE [ID] = @Id
 
 			SET @UpdateSuccessful = 1

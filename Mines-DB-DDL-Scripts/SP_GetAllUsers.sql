@@ -1,4 +1,4 @@
-/****** Object:  StoredProcedure [dbo].[SP_GetAllUsers]    Script Date: 1/14/2021 12:50:38 AM ******/
+/****** Object:  StoredProcedure [dbo].[SP_GetAllUsers]    Script Date: 1/14/2021 1:50:20 AM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -6,10 +6,11 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
+
 CREATE   PROCEDURE [dbo].[SP_GetAllUsers]
 AS
 BEGIN
-	SELECT [ID], [USERNAME], [FIRSTNAME], [LASTNAME], [EMAILADDRESS], [STATE], [AGE] FROM [DBO].[USERS]
+	SELECT [ID], [USERNAME], [FIRSTNAME], [LASTNAME], [EMAILADDRESS], [STATE], [AGE], [GENDER] FROM [DBO].[USERS]
 END
 GO
 

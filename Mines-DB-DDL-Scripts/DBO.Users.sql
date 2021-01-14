@@ -1,4 +1,4 @@
-/****** Object:  Table [dbo].[Users]    Script Date: 1/13/2021 12:54:40 AM ******/
+/****** Object:  Table [dbo].[Users]    Script Date: 1/14/2021 1:47:36 AM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -13,6 +13,8 @@ CREATE TABLE [dbo].[Users](
 	[EmailAddress] [nvarchar](100) NOT NULL,
 	[State] [char](2) NULL,
 	[Age] [tinyint] NOT NULL,
+	[Gender] [char](1) NULL,
+	[Password] [nvarchar](400) NULL,
  CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
