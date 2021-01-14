@@ -49,7 +49,7 @@ namespace Mines_Web.Models
         public string Gender { get; set; }
 
         [Required]
-        [Range(1, 130)]
+        [Range(1, 127)]
         public int Age { get; set; }
     }
 }
