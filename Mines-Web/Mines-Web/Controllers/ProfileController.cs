@@ -11,7 +11,8 @@ namespace Mines_Web.Controllers
         // GET: Profile
         public ActionResult Index()
         {
-            return View();
+            return View("ProfileView");
         }
+
     }
 }
