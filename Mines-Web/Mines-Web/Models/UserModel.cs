@@ -48,7 +48,7 @@ namespace Mines_Web.Models
         // 1 = male 0 = female
 
         [Required]
-        public string Gender { get; set; }
+        public char Gender { get; set; }
 
         [Required]
         [Range(1, 130)]
