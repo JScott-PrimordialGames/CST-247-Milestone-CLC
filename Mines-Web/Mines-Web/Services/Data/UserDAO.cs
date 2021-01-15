@@ -25,7 +25,7 @@ namespace Mines_Web.Services.Data
         string spSearchUsers = "[DBO].[SP_SearchUsers]";
 
         //Gets a single user from the database
-        public UserModel getUser(int id)
+        public UserModel GetUser(int id)
         {
             UserModel user = new UserModel();
 
@@ -48,8 +48,9 @@ namespace Mines_Web.Services.Data
                         user.Email = reader["EmailAddress"].ToString();
                         user.State = reader["State"].ToString();
                         user.Age = Convert.ToInt32(reader["Age"].ToString());
-                        user.Gender = reader["Gender"].ToString();
+                        user.Gender = Convert.ToChar(reader["Gender"].ToString());
 
+                        reader.Close();
                         conn.Close();
                     }
                     catch (SqlException ex)
@@ -67,7 +68,7 @@ namespace Mines_Web.Services.Data
         }
 
         //Adds a single user to the database
-        public bool addUser(UserModel user)
+        public bool AddUser(UserModel user)
         {
             using (SqlConnection conn = new SqlConnection(connectionStr))
             {
@@ -116,7 +117,7 @@ namespace Mines_Web.Services.Data
         }
 
         //Checks if an email address is unique
-        public bool emailUnique(UserModel user)
+        public bool EmailUnique(UserModel user)
         {
             using (SqlConnection conn = new SqlConnection(connectionStr))
             {
@@ -156,7 +157,7 @@ namespace Mines_Web.Services.Data
         }
 
         //Deletes a single user
-        public bool deleteUser(UserModel user)
+        public bool DeleteUser(UserModel user)
         {
             using (SqlConnection conn = new SqlConnection(connectionStr))
             {
@@ -196,7 +197,7 @@ namespace Mines_Web.Services.Data
         }
         
         //Returns a list of all users in the database
-        public List<UserModel> getAllUsers()
+        public List<UserModel> GetAllUsers()
         {
             List<UserModel> allUsers = new List<UserModel>();
 
@@ -224,7 +225,7 @@ namespace Mines_Web.Services.Data
                             user.Gender = Convert.ToChar(reader["Gender"].ToString());
                             allUsers.Add(user);
                         }
-
+                        reader.Close();
                         conn.Close();
                     }
                     catch (SqlException ex)
@@ -244,7 +245,7 @@ namespace Mines_Web.Services.Data
         }
 
         //Returns a list of all users matching a search string in the database
-        public List<UserModel> searchUsers(string searchString)
+        public List<UserModel> SearchUsers(string searchString)
         {
             List<UserModel> allUsers = new List<UserModel>();
 
@@ -273,7 +274,7 @@ namespace Mines_Web.Services.Data
                             user.Gender = Convert.ToChar(reader["Gender"].ToString());
                             allUsers.Add(user);
                         }
-
+                        reader.Close();
                         conn.Close();
                     }
                     catch (SqlException ex)
@@ -293,7 +294,7 @@ namespace Mines_Web.Services.Data
         }
 
         //User updates their profile
-        public bool updateProfile(UserModel user)
+        public bool UpdateProfile(UserModel user)
         {
             using (SqlConnection conn = new SqlConnection(connectionStr))
             {
@@ -342,7 +343,7 @@ namespace Mines_Web.Services.Data
         }
 
         //Admin updates a profile
-        public bool updateProfileAdmin(UserModel user)
+        public bool UpdateProfileAdmin(UserModel user)
         {
             using (SqlConnection conn = new SqlConnection(connectionStr))
             {
@@ -391,7 +392,7 @@ namespace Mines_Web.Services.Data
         }
 
         //Checks if an username is unique
-        public bool userNameUnique(UserModel user)
+        public bool UserNameUnique(UserModel user)
         {
             using (SqlConnection conn = new SqlConnection(connectionStr))
             {

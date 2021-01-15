@@ -13,47 +13,47 @@ namespace Mines_Web.Services.Business
 
         public UserModel getUser(int id)
         {
-            return userDAO.getUser(id);
+            return userDAO.GetUser(id);
         }
 
         public bool addUser(UserModel user)
         {
-            return userDAO.addUser(user);
+            return userDAO.AddUser(user);
         }
 
         public bool isEmailUnique(UserModel user)
         {
-            return userDAO.emailUnique(user);
+            return userDAO.EmailUnique(user);
         }
 
         public bool deleteUser(UserModel user)
         {
-            return userDAO.deleteUser(user);
+            return userDAO.DeleteUser(user);
         }
 
         public bool updateProfile(UserModel user)
         {
-            return userDAO.updateProfile(user);
+            return userDAO.UpdateProfile(user);
         }
 
         public bool updateProfileAdmin(UserModel user)
         {
-            return userDAO.updateProfileAdmin(user);
+            return userDAO.UpdateProfileAdmin(user);
         }
 
         public bool isUserNameUnique(UserModel user)
         {
-            return userDAO.userNameUnique(user);
+            return userDAO.UserNameUnique(user);
         }
 
         public List<UserModel> getUsers()
         {
-            return userDAO.getAllUsers();
+            return userDAO.GetAllUsers();
         }
 
         public List<UserModel> searchUsers(string searchString)
         {
-            return userDAO.searchUsers(searchString);
+            return userDAO.SearchUsers(searchString);
         }
     }
 }
