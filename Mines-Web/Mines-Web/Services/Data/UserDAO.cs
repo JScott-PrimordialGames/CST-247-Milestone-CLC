@@ -41,14 +41,17 @@ namespace Mines_Web.Services.Data
                         SqlDataReader reader = cmd.ExecuteReader();
                         reader.Read();
 
-                        user.ID = Convert.ToInt32(reader["Id"].ToString());
-                        user.Username = reader["UserName"].ToString();
-                        user.FirstName = reader["FirstName"].ToString();
-                        user.LastName = reader["LastName"].ToString();
-                        user.Email = reader["EmailAddress"].ToString();
-                        user.State = reader["State"].ToString();
-                        user.Age = Convert.ToInt32(reader["Age"].ToString());
-                        user.Gender = Convert.ToChar(reader["Gender"].ToString());
+                        if (reader.HasRows)
+                        {
+                            user.ID = Convert.ToInt32(reader["Id"].ToString());
+                            user.Username = reader["UserName"].ToString();
+                            user.FirstName = reader["FirstName"].ToString();
+                            user.LastName = reader["LastName"].ToString();
+                            user.Email = reader["EmailAddress"].ToString();
+                            user.State = reader["State"].ToString();
+                            user.Age = Convert.ToInt32(reader["Age"].ToString());
+                            user.Gender = Convert.ToChar(reader["Gender"].ToString());
+                        }
 
                         reader.Close();
                         conn.Close();

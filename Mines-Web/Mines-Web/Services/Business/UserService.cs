@@ -9,51 +9,51 @@ namespace Mines_Web.Services.Business
 {
     public class UserService
     {
-        UserDAO userDAO = new UserDAO();
+        UserDAO service = new UserDAO();
 
         public UserModel getUser(int id)
         {
-            return userDAO.GetUser(id);
+            return service.GetUser(id);
         }
 
         public bool addUser(UserModel user)
         {
-            return userDAO.AddUser(user);
+            return service.AddUser(user);
         }
 
         public bool isEmailUnique(UserModel user)
         {
-            return userDAO.EmailUnique(user);
+            return service.EmailUnique(user);
         }
 
         public bool deleteUser(UserModel user)
         {
-            return userDAO.DeleteUser(user);
+            return service.DeleteUser(user);
         }
 
         public bool updateProfile(UserModel user)
         {
-            return userDAO.UpdateProfile(user);
+            return service.UpdateProfile(user);
         }
 
         public bool updateProfileAdmin(UserModel user)
         {
-            return userDAO.UpdateProfileAdmin(user);
+            return service.UpdateProfileAdmin(user);
         }
 
         public bool isUserNameUnique(UserModel user)
         {
-            return userDAO.UserNameUnique(user);
+            return service.UserNameUnique(user);
         }
 
         public List<UserModel> getUsers()
         {
-            return userDAO.GetAllUsers();
+            return service.GetAllUsers();
         }
 
         public List<UserModel> searchUsers(string searchString)
         {
-            return userDAO.SearchUsers(searchString);
+            return service.SearchUsers(searchString);
         }
     }
 }

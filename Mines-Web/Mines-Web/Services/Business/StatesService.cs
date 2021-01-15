@@ -9,11 +9,11 @@ namespace Mines_Web.Services.Business
 {
     public class StatesService
     {
-        StatesDAO statesDAO = new StatesDAO();
+        StatesDAO service = new StatesDAO();
 
         public List<StateModel> GetStates()
         {
-            return statesDAO.GetStates();
+            return service.GetStates();
         }
     }
 }
