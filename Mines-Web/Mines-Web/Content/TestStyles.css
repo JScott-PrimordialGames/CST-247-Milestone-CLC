@@ -8,7 +8,6 @@
     list-style: none;
     font-family: "Montserrat", sans-serif;
     font-weight: 300;
-    transition: all .4s ease-in-out;
     transition: transform 1s ease-in-out;
     /* Hide scrollbar for IE, Edge and Firefox */
     -ms-overflow-style: none; /* IE and Edge */
@@ -107,6 +106,7 @@ form {
     .login-page-form input[type="email"]:focus {
         outline: none;
         border: 1px solid rgba(255, 255, 255, 0.9);
+        transition: all .3s ease-in-out;
     }
 
 .submit-button {
@@ -122,6 +122,7 @@ form {
     font-weight: 400;
     padding: 6px;
     margin: 10px 0 10px 0;
+    transition: all .3s ease-in-out;
 }
 
     .submit-button:hover {
