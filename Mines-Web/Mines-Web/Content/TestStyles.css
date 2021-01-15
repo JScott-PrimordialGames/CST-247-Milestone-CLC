@@ -1,0 +1,156 @@
+﻿body {
+}
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    transition: all .4s ease-in-out;
+    transition: transform 1s ease-in-out;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    *::-webkit-scrollbar {
+        display: none;
+    }
+
+html {
+    width: 100%;
+}
+
+body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient( to bottom right, rgba(231, 57, 245, 0.8), rgba(97, 217, 222, 0.8) ), url("/Images/comic.jpg");
+}
+
+form {
+    text-align: center;
+    height: fit-content;
+}
+
+.container{
+    margin:0;
+}
+
+.full-wrapper {
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.slide-container {
+    min-width: 200vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*transform: translateX(-100vw);*/
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.login-page-form {
+    min-height: 300px;
+    max-height: 500px;
+    overflow: scroll;
+    padding: 30px;
+    width: 300px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.5);
+}
+
+.login-page-form-title {
+    text-align: center;
+    color: #fff;
+    font-size: 48px;
+    margin: 30px;
+}
+
+.login-page-form input[type="text"],
+.login-page-form input[type="password"],
+.login-page-form input[type="email"] {
+    width: 250px;
+    height: 35px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 2px;
+    color: #fff;
+    font-family: "Exo", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 4px;
+    margin: 10px 0;
+}
+
+    .login-page-form input[type="text"]:focus,
+    .login-page-form input[type="password"]:focus,
+    .login-page-form input[type="email"]:focus {
+        outline: none;
+        border: 1px solid rgba(255, 255, 255, 0.9);
+    }
+
+.submit-button {
+    width: 250px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid #fff;
+    cursor: pointer;
+    border-radius: 2px;
+    color: #8387a1;
+    font-family: "Exo", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 6px;
+    margin: 10px 0 10px 0;
+}
+
+    .submit-button:hover {
+        background: rgba(255, 255, 255, 0.7);
+    }
+
+.switch-form-button {
+    /* text-align: left; */
+    color: #8387a1;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.slide{
+    transform: translateX(-100vw);
+}
+
+@media only screen and (min-width: 500px) {
+    .login-page-form {
+        min-width: 450px;
+    }
+
+        .login-page-form input[type="text"],
+        .login-page-form input[type="password"],
+        .login-page-form input[type="email"],
+        .login-page-form input {
+            width: 325px;
+            height: 40px;
+        }
+}

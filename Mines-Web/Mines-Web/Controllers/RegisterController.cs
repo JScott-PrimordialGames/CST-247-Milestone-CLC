@@ -33,5 +33,10 @@ namespace Mines_Web.Controllers
 
         }
 
+        public ActionResult TestStyles()
+        {
+            return View("TestStyles");
+        }
+
     }
 }

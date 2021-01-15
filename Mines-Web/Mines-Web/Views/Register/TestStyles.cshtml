@@ -1,0 +1,73 @@
+﻿@using Mines_Web.Models
+@model Mines_Web.Models.UserModel
+
+@{
+    ViewBag.Title = "TestStyles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/TestStyles.css" rel="stylesheet" />
+
+
+<div class="full-wrapper">
+    <div class="slide-container">
+        <div class="form-container">
+            <!-- BEGIN LOGIN FORM -->
+            <div id="loginForm" class="login-page-form">
+                <form action="#" class="form">
+                    <div class="login-page-form-title">Login</div>
+                    <div class="socialLink-subContainer">
+                        <a href="#" class="socialLink">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="socialLink">
+                            <i class="fab fa-google-plus-g"></i>
+                        </a>
+                        <a href="#" class="socialLink">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <input type="text" placeholder="Username" />
+                    <input type="password" placeholder="Password" />
+                    <input type="submit" class="submit-button" />
+                    <div class="switch-form-button">Register</div>
+                </form>
+            </div>
+        </div>
+        <!-- END LOGIN FORM -->
+        <!-- BEGIN REG FORM -->
+
+        <div class="form-container">
+            <div id="regForm" class="login-page-form">
+                <form action="#" class="form">
+                    <div class="login-page-form-title">Create Account</div>
+                    <div class="socialLink-subContainer">
+                        <a href="#" class="socialLink">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="socialLink">
+                            <i class="fab fa-google-plus-g"></i>
+                        </a>
+                        <a href="#" class="socialLink">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <input type="text" placeholder="Username" />
+                    <input type="email" placeholder="Email" />
+                    <input type="email" placeholder="Confirm Email" />
+                    <input type="password" placeholder="Password" />
+                    <input type="password" placeholder="Confirm Password" />
+                    <input type="text" placeholder="First" />
+                    <input type="text" placeholder="Last" />
+                    <input type="text" placeholder="State" />
+                    <input type="text" placeholder="Age" />
+                    <input type="submit" class="submit-button" />
+
+                    <div class="switch-form-button">Login</div>
+                </form>
+            </div>
+        </div>
+        <!-- END REG FORM -->
+    </div>
+</div>
+<script src="~/Scripts/TestStyles.js"></script>
+
