@@ -13,7 +13,7 @@ namespace Mines_Web.Controllers
         // GET: Register
         public ActionResult Index()
         {
-            return View("Register");
+            return View("SignIn");
         }
 
         [HttpPost]
@@ -31,11 +31,6 @@ namespace Mines_Web.Controllers
 
             return View("Register");
 
-        }
-
-        public ActionResult SignIn()
-        {
-            return View("SignIn");
         }
 
     }
