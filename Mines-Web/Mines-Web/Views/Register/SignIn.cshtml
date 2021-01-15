@@ -1,0 +1,158 @@
+﻿
+@using Mines_Web.Models
+@model Mines_Web.Models.UserModel
+
+@{
+    ViewBag.Title = "Sign In";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/styles_SignIn.css" rel="stylesheet" />
+
+
+<div class="full-wrapper">
+    <div class="slide-container">
+        <div class="form-container">
+            <!-- BEGIN LOGIN FORM -->
+            <div id="loginForm" class="login-page-form">
+
+                @using (Html.BeginForm("#", "#", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="login-page-form-title">Sign in</div>
+
+                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { type = "text", placeholder = "Username" } })
+
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { type = "password", placeholder = "Password" } })
+
+                    <input type="submit" class="submit-button" />
+                    <div class="switch-form-button">Register</div>
+                }
+            </div>
+        </div>
+        <!-- END LOGIN FORM -->
+        <!-- BEGIN REG FORM -->
+
+        <div class="form-container">
+            <div id="regForm" class="login-page-form">
+
+                @using (Html.BeginForm("#", "#", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                    <div class="login-page-form-title">Create Account</div>
+
+                    //FIRSTNAME
+                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { type = "text", placeholder = "First Name" } })
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger", @style = "font-size: 12px; display: block;" })
+
+                    //LASTNAME
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { type = "text", placeholder = "Last Name" } })
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger", @style = "font-size: 12px; display: block;" })
+
+                    //USERNAME
+                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { type = "text", placeholder = "Username" } })
+                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger", @style = "font-size: 12px; display: block;" })
+
+                    //PASSWORD
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { type = "password", placeholder = "Password" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger", @style = "font-size: 12px; display: block;" })
+
+                    //COMPARE PASSWORD
+                    @Html.EditorFor(model => model.ComparePassword, new { htmlAttributes = new { type = "password", placeholder = "Confirm Password" } })
+                    @Html.ValidationMessageFor(model => model.ComparePassword, "", new { @class = "text-danger", @style = "font-size: 12px; display: block;" })
+
+                    //EMAIL
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { type = "email", placeholder = "Email" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger", @style = "font-size: 12px; display: block;" })
+
+                    //COMPARE EMAIL
+                    @Html.EditorFor(model => model.CompareEmail, new { htmlAttributes = new { type = "email", placeholder = "Confirm Email" } })
+                    @Html.ValidationMessageFor(model => model.CompareEmail, "", new { @class = "text-danger", @style = "font-size: 12px; display: block;" })
+
+                    //STATE
+                    @Html.DropDownListFor(model => model.State,
+                        new SelectList(new List<SelectListItem> {
+                            new SelectListItem{ Text = "AL", Value = "AL" },
+                            new SelectListItem{ Text = "AK", Value = "AK" },
+                            new SelectListItem{ Text = "AZ", Value = "AZ" },
+                            new SelectListItem{ Text = "AR", Value = "AR" },
+                            new SelectListItem{ Text = "CA", Value = "CA" },
+                            new SelectListItem{ Text = "CO", Value = "CO" },
+                            new SelectListItem{ Text = "CT", Value = "CT" },
+                            new SelectListItem{ Text = "DE", Value = "DE" },
+                            new SelectListItem{ Text = "FL", Value = "FL" },
+                            new SelectListItem{ Text = "GA", Value = "GA" },
+                            new SelectListItem{ Text = "HI", Value = "HI" },
+                            new SelectListItem{ Text = "ID", Value = "ID" },
+                            new SelectListItem{ Text = "IL", Value = "IL" },
+                            new SelectListItem{ Text = "IN", Value = "IN" },
+                            new SelectListItem{ Text = "IA", Value = "IA" },
+                            new SelectListItem{ Text = "KS", Value = "KS" },
+                            new SelectListItem{ Text = "KY", Value = "KY" },
+                            new SelectListItem{ Text = "LA", Value = "LA" },
+                            new SelectListItem{ Text = "ME", Value = "ME" },
+                            new SelectListItem{ Text = "MD", Value = "MD" },
+                            new SelectListItem{ Text = "MA", Value = "MA" },
+                            new SelectListItem{ Text = "MI", Value = "MI" },
+                            new SelectListItem{ Text = "MN", Value = "MN" },
+                            new SelectListItem{ Text = "MS", Value = "MS" },
+                            new SelectListItem{ Text = "MO", Value = "MO" },
+                            new SelectListItem{ Text = "MT", Value = "MT" },
+                            new SelectListItem{ Text = "NE", Value = "NE" },
+                            new SelectListItem{ Text = "NV", Value = "NV" },
+                            new SelectListItem{ Text = "NH", Value = "NH" },
+                            new SelectListItem{ Text = "NJ", Value = "NJ" },
+                            new SelectListItem{ Text = "NM", Value = "NM" },
+                            new SelectListItem{ Text = "NY", Value = "NY" },
+                            new SelectListItem{ Text = "NC", Value = "NC" },
+                            new SelectListItem{ Text = "ND", Value = "ND" },
+                            new SelectListItem{ Text = "OH", Value = "OH" },
+                            new SelectListItem{ Text = "OK", Value = "OK" },
+                            new SelectListItem{ Text = "OR", Value = "OR" },
+                            new SelectListItem{ Text = "PA", Value = "PA" },
+                            new SelectListItem{ Text = "RI", Value = "RI" },
+                            new SelectListItem{ Text = "SC", Value = "SC" },
+                            new SelectListItem{ Text = "SD", Value = "SD" },
+                            new SelectListItem{ Text = "TN", Value = "TN" },
+                            new SelectListItem{ Text = "TX", Value = "TX" },
+                            new SelectListItem{ Text = "UT", Value = "UT" },
+                            new SelectListItem{ Text = "VT", Value = "VT" },
+                            new SelectListItem{ Text = "VA", Value = "VA" },
+                            new SelectListItem{ Text = "WA", Value = "WA" },
+                            new SelectListItem{ Text = "WV", Value = "WV" },
+                            new SelectListItem{ Text = "WI", Value = "WI" },
+                            new SelectListItem{ Text = "WY", Value = "WY" }
+                        }, "value", "Text"),
+                        "Select State", new { @class = "", @style = "border: 1px solid #ccc" })
+                    @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger", @style = "font-size: 12px; display: block;" })
+
+                    //GENDER
+                    @Html.DropDownListFor(model => model.Gender,
+                        new SelectList(new List<SelectListItem> {
+                            new SelectListItem{ Text = "Male", Value = "Male" },
+                            new SelectListItem{ Text = "Female", Value = "Female" }
+                        }, "value", "Text"),
+                        "Select Gender", new { @class = "", @style = "border: 1px solid #ccc" })
+                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger", @style = "font-size: 12px; display: block;" })
+
+                    //AGE
+                    @Html.EditorFor(model => model.Age, new { htmlAttributes = new { type = "text", placeholder = "Age" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger", @style = "font-size: 12px; display: block;" })
+
+
+                    <input type="submit" class="submit-button" />
+                    <div class="switch-form-button">Register</div>
+                }
+            </div>
+        </div>
+        <!-- END REG FORM -->
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/scripts_SignIn.js")
+}
