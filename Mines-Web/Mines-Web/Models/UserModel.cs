@@ -11,6 +11,8 @@ namespace Mines_Web.Models
     //First Name, Last Name, Sex, Age, State, Email Address, Username, and Password
     public class UserModel
     {
+        public int ID { get; set;}
+
         [Required]
         [DisplayName("User Name")]
         [StringLength(20, MinimumLength = 4, ErrorMessage = "Username must be between 4 and 20 characters")]
@@ -46,7 +48,7 @@ namespace Mines_Web.Models
         // 1 = male 0 = female
 
         [Required]
-        public string Gender { get; set; }
+        public char Gender { get; set; }
 
         [Required]
         [Range(1, 130)]

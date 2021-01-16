@@ -25,9 +25,9 @@ namespace Mines_Web.Controllers
 
             SecurityService service = new SecurityService();
 
-            if (service.CheckIfUsernameExists(model))
+            /*if (service.CheckIfUsernameExists(model))
                 return View("UsernameExists");
-            bool result = service.RegisterUserAccount(model);
+            bool result = service.RegisterUserAccount(model);*/
 
             return View("Register");
 

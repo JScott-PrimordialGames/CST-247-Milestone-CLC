@@ -11,14 +11,14 @@ namespace Mines_Web.Services.Business
     {
         SecurityDAO service = new SecurityDAO();
 
-        public bool CheckIfUsernameExists(UserModel user)
+        public UserModel Authenticate(PrincipalModel principal)
         {
-            return service.CheckIfUsernameExists(user);
+            return service.Authenticate(principal);
         }
 
-        public bool RegisterUserAccount(UserModel user)
+        public bool ChangePassword(PrincipalModel principal)
         {
-            return service.RegisterUser(user);
+            return service.ChangePassword(principal);
         }
     }
 }
