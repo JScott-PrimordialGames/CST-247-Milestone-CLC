@@ -190,6 +190,8 @@
     <Content Include="Views\SignIn\_SignInForm.cshtml" />
     <Content Include="Views\SignIn\_RegisterForm.cshtml" />
     <Content Include="Views\Shared\_HomePageLayout_notLoggedIn.cshtml" />
+    <Content Include="Views\SignIn\SignInForm.cshtml" />
+    <Content Include="Views\SignIn\RegForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -19,14 +19,14 @@ namespace Mines_Web.Controllers
             return View();
         }
 
-        public ActionResult LoadRegForm()
+        public ActionResult RegForm()
         {
-            return PartialView("_RegisterForm");
+            return View("RegForm");
         }
 
-        public ActionResult LoadSignInForm()
+        public ActionResult SignInForm()
         {
-            return PartialView("_SignInForm");
+            return View("SignInForm");
         }
 
         [HttpPost]
