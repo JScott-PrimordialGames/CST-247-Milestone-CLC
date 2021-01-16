@@ -124,7 +124,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
-    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\SignInController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -182,13 +181,8 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Register\Register.cshtml" />
     <Content Include="Views\Profile\Profile.cshtml" />
     <Content Include="Views\Profile\ProfileView.cshtml" />
-    <Content Include="Views\Register\SignIn.cshtml" />
-    <Content Include="Views\SignIn\Index.cshtml" />
-    <Content Include="Views\SignIn\_SignInForm.cshtml" />
-    <Content Include="Views\SignIn\_RegisterForm.cshtml" />
     <Content Include="Views\Shared\_HomePageLayout_notLoggedIn.cshtml" />
     <Content Include="Views\SignIn\SignInForm.cshtml" />
     <Content Include="Views\SignIn\RegForm.cshtml" />
