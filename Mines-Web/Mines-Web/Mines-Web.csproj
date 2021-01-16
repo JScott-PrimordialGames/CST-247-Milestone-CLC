@@ -125,6 +125,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\SignInController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -185,6 +186,9 @@
     <Content Include="Views\Profile\Profile.cshtml" />
     <Content Include="Views\Profile\ProfileView.cshtml" />
     <Content Include="Views\Register\SignIn.cshtml" />
+    <Content Include="Views\SignIn\Index.cshtml" />
+    <Content Include="Views\SignIn\_SignInForm.cshtml" />
+    <Content Include="Views\SignIn\_RegisterForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

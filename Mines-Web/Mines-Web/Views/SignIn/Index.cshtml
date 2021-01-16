@@ -9,12 +9,9 @@
 <link href="~/Content/styles_SignIn.css" rel="stylesheet" />
 
 
-<div class="full-wrapper">
-    <div class="slide-container">
-        
-        
-    </div>
-</div>
+@Html.Action("LoadSignInForm", "SignIn")
+
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
