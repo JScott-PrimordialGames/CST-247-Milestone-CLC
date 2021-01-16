@@ -29,11 +29,10 @@ namespace Mines_Web.Controllers
             return PartialView("_SignInForm");
         }
 
+        
         public ActionResult Authenticate(PrincipalModel model)
         {
             UserModel user = securityService.Authenticate(model);
-            Console.Out.WriteLine("Principal: name: {0}, password: {1}", model.UserName, model.Password);
-            Console.Out.WriteLine("User: Id: {0}, username {1}", user.ID, user.Username);
             if(user.Username != null)
             {
                 return Content("Login Passed");
@@ -43,6 +42,7 @@ namespace Mines_Web.Controllers
             }
         }
 
+        [HttpPost]
         public ActionResult Register(UserModel model)
         {
             bool isRegistrationSuccessful = userService.addUser(model);

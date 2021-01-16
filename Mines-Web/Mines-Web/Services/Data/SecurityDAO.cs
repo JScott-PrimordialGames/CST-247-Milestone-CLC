@@ -17,7 +17,7 @@ namespace Mines_Web.Services.Data
         string connectionStr = ConfigurationManager.ConnectionStrings["MinesApp"].ConnectionString;
 
         //Store Procedures
-        string spVerifyLogon = "[DBO].[SP_VerifyLogin]";
+        string spVerifyLogon = "[DBO].[SP_VerifyLogon]";
         string spChangePassWord = "[DBO].[SP_ChangePassword]";
 
         public UserModel Authenticate(PrincipalModel principal)
@@ -29,7 +29,7 @@ namespace Mines_Web.Services.Data
                 using (SqlCommand cmd = new SqlCommand(spVerifyLogon, conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Login", principal.UserName);
+                    cmd.Parameters.AddWithValue("@UserName", principal.Username);
                     cmd.Parameters.AddWithValue("@Password", principal.Password);
 
                     try
@@ -55,7 +55,7 @@ namespace Mines_Web.Services.Data
                     }
                     catch (SqlException ex)
                     {
-                        Console.Error.WriteLine(ex.Message);
+                        Console.Error.WriteLine("{0}: {1}\n{2}", ex.Number, ex.Message, ex.Errors);
                     }
                     catch (Exception ex)
                     {
@@ -76,7 +76,7 @@ namespace Mines_Web.Services.Data
                     SqlParameter isSuccessful = new SqlParameter("@IsSuccessful", SqlDbType.Bit) { Direction = ParameterDirection.Output };
 
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@UserName", principal.UserName);
+                    cmd.Parameters.AddWithValue("@UserName", principal.Username);
                     cmd.Parameters.AddWithValue("@Password", principal.Password);
                     cmd.Parameters.Add(isSuccessful);
 
