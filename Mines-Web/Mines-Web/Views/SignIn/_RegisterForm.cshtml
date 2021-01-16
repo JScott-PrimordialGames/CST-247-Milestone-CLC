@@ -105,8 +105,8 @@
                     //GENDER
                     @Html.DropDownListFor(model => model.Gender,
                         new SelectList(new List<SelectListItem> {
-                            new SelectListItem{ Text = "Male", Value = "Male" },
-                            new SelectListItem{ Text = "Female", Value = "Female" }
+                            new SelectListItem{ Text = "Male", Value = "M" },
+                            new SelectListItem{ Text = "Female", Value = "F" }
                         }, "value", "Text"),
                         "Select Gender", new { @class = "", @style = "border: 1px solid #ccc" })
                     @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger", @style = "font-size: 12px; display: block;" })
