@@ -9,8 +9,7 @@
 
 <!-- BEGIN REG FORM -->
 
-<div id="registerForm">
-    <div class="full-wrapper">
+    <div class="wrapper">
         <div class="form-container">
             <div class="login-page-form">
 
@@ -104,7 +103,7 @@
                             new SelectListItem{ Text = "WI", Value = "WI" },
                             new SelectListItem{ Text = "WY", Value = "WY" }
                         }, "value", "Text"),
-                        "Select State", new { @class = "", @style = "border: 1px solid #ccc" })
+                        "Select State")
                     @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger", @style = "font-size: 12px; display: block;" })
 
                     //GENDER
@@ -113,7 +112,7 @@
                             new SelectListItem{ Text = "Male", Value = "M" },
                             new SelectListItem{ Text = "Female", Value = "F" }
                         }, "value", "Text"),
-                        "Select Gender", new { @class = "", @style = "border: 1px solid #ccc" })
+                        "Select Gender")
                     @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger", @style = "font-size: 12px; display: block;" })
 
                     //AGE
@@ -128,7 +127,6 @@
                 }
             </div>
         </div>
-    </div>
 </div>
 <!-- END REG FORM -->
 

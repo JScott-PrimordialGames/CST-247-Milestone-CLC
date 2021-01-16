@@ -9,26 +9,24 @@
 
 <!-- BEGIN LOGIN FORM -->
 
-<div id="signInForm">
-    <div class="full-wrapper">
-        <div class="form-container">
-            <div class="login-page-form">
+<div class="wrapper">
+    <div class="form-container">
+        <div class="login-page-form">
 
-                @using (Html.BeginForm("Authenticate", "SignIn", FormMethod.Post))
-                {
-                    @Html.AntiForgeryToken()
+            @using (Html.BeginForm("Authenticate", "SignIn", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
 
-                    <div class="login-page-form-title">Sign in</div>
+                <div class="login-page-form-title">Sign in</div>
 
-                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { type = "text", placeholder = "Username" } })
+                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { type = "text", placeholder = "Username" } })
 
-                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { type = "password", placeholder = "Password" } })
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { type = "password", placeholder = "Password" } })
 
-                    <input type="submit" class="submit-button" value="Sign In" />
+                <input type="submit" class="submit-button" value="Sign In" />
 
-                    @Html.ActionLink("Register", "RegForm", "", new { @class = "switch-form-button" })
-                }
-            </div>
+                @Html.ActionLink("Register", "RegForm", "", new { @class = "switch-form-button" })
+            }
         </div>
     </div>
 </div>
