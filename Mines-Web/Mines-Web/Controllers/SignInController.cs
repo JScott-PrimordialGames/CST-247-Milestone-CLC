@@ -29,29 +29,44 @@ namespace Mines_Web.Controllers
             return PartialView("_SignInForm");
         }
 
-        
+        [HttpPost]
         public ActionResult Authenticate(PrincipalModel model)
         {
-            UserModel user = securityService.Authenticate(model);
-            if(user.Username != null)
+            if (ModelState.IsValid)
             {
-                return Content("Login Passed");
+                UserModel user = securityService.Authenticate(model);
+                if (user.Username != null)
+                {
+                    return Content("Login Passed");
+                }
+                else
+                {
+                    return Content("Login Failed");
+                }
             } else
             {
-                return Content("Login Failed");
+                return Content("Username or password is incorrect. Please try again.");
             }
         }
 
         [HttpPost]
         public ActionResult Register(UserModel model)
         {
-            bool isRegistrationSuccessful = userService.addUser(model);
-            if (isRegistrationSuccessful)
+            if (ModelState.IsValid)
             {
-                return Content("Congratulations! You have successfulled registed your account.");
-            } else
+                if (userService.addUser(model))
+                {
+                    return Content("Congratulations! You have successfulled registed your account.");
+                } else
+                {
+                    return Content("Sorry! There was an error registering your account. <br/>Please try again or reach out to an administrator.");
+                }
+            }
+            else
             {
-                return Content("Sorry! There was an error registering your account. <br/>Please try again or reach out to an administrator.");
+                return Content("The information you submitted is not valid." +
+                    "\nPlease make sure all fields match and First Name, Last Name, and Login are all longer than 4 characters and shorter than 40." +
+                    "\nPlease make sure the password field is between 4 and 20 characters.");
             }
         }
     }
