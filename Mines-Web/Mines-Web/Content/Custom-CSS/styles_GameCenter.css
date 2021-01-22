@@ -21,6 +21,12 @@
     position: relative;
 }
 
+.timer {
+    font-size: 33px;
+    color: #61D9DE;
+    text-align: center;
+}
+
 .cell-button {
     width: 20px;
     height: 20px;
