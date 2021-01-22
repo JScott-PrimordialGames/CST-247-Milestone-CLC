@@ -1,21 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zerop\\Desktop\\CLC Project\\CST-227_Milestone\\ClassLibrary\\ClassLibrary.csproj": {}
+    "C:\\Users\\donal\\source\\repos\\CST-247-Milestone-CLC\\CST-227_Milestone\\ClassLibrary\\ClassLibrary.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zerop\\Desktop\\CLC Project\\CST-227_Milestone\\ClassLibrary\\ClassLibrary.csproj": {
+    "C:\\Users\\donal\\source\\repos\\CST-247-Milestone-CLC\\CST-227_Milestone\\ClassLibrary\\ClassLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zerop\\Desktop\\CLC Project\\CST-227_Milestone\\ClassLibrary\\ClassLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\donal\\source\\repos\\CST-247-Milestone-CLC\\CST-227_Milestone\\ClassLibrary\\ClassLibrary.csproj",
         "projectName": "ClassLibrary",
-        "projectPath": "C:\\Users\\zerop\\Desktop\\CLC Project\\CST-227_Milestone\\ClassLibrary\\ClassLibrary.csproj",
-        "packagesPath": "C:\\Users\\zerop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zerop\\Desktop\\CLC Project\\CST-227_Milestone\\ClassLibrary\\obj\\",
+        "projectPath": "C:\\Users\\donal\\source\\repos\\CST-247-Milestone-CLC\\CST-227_Milestone\\ClassLibrary\\ClassLibrary.csproj",
+        "packagesPath": "C:\\Users\\donal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\donal\\source\\repos\\CST-247-Milestone-CLC\\CST-227_Milestone\\ClassLibrary\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\zerop\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\donal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"

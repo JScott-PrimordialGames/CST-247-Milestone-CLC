@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "lyzYSzh3kk1wEnsLRgIJYmXp3IXwqeuK4fu6SWmYyEL9S1VeXhCjlwSUZIRbEip9H5O5qtW4p3qZ4j2N6EptiA==",
+  "dgSpecHash": "efH2IGzbrUWjBiW0cZmGN2NoPJwsroyH1DMufh8IB5TEqXWZFwhuGRET15lAEwwDXo9D89tXQHPm/28DWkviXg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\zerop\\Desktop\\CLC Project\\CST-227_Milestone\\ClassLibrary\\ClassLibrary.csproj",
+  "projectFilePath": "C:\\Users\\donal\\source\\repos\\CST-247-Milestone-CLC\\CST-227_Milestone\\ClassLibrary\\ClassLibrary.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\zerop\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\zerop\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

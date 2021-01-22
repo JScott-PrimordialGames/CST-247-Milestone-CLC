@@ -1,21 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zerop\\Desktop\\CLC Project\\CST-227_Milestone\\milestone_MineSweeper_ConsoleApp\\milestone_MineSweeper_ConsoleApp.csproj": {}
+    "C:\\Users\\donal\\source\\repos\\CST-247-Milestone-CLC\\CST-227_Milestone\\milestone_MineSweeper_ConsoleApp\\milestone_MineSweeper_ConsoleApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zerop\\Desktop\\CLC Project\\CST-227_Milestone\\ClassLibrary\\ClassLibrary.csproj": {
+    "C:\\Users\\donal\\source\\repos\\CST-247-Milestone-CLC\\CST-227_Milestone\\ClassLibrary\\ClassLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zerop\\Desktop\\CLC Project\\CST-227_Milestone\\ClassLibrary\\ClassLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\donal\\source\\repos\\CST-247-Milestone-CLC\\CST-227_Milestone\\ClassLibrary\\ClassLibrary.csproj",
         "projectName": "ClassLibrary",
-        "projectPath": "C:\\Users\\zerop\\Desktop\\CLC Project\\CST-227_Milestone\\ClassLibrary\\ClassLibrary.csproj",
-        "packagesPath": "C:\\Users\\zerop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zerop\\Desktop\\CLC Project\\CST-227_Milestone\\ClassLibrary\\obj\\",
+        "projectPath": "C:\\Users\\donal\\source\\repos\\CST-247-Milestone-CLC\\CST-227_Milestone\\ClassLibrary\\ClassLibrary.csproj",
+        "packagesPath": "C:\\Users\\donal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\donal\\source\\repos\\CST-247-Milestone-CLC\\CST-227_Milestone\\ClassLibrary\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\zerop\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\donal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
@@ -61,18 +66,23 @@
         }
       }
     },
-    "C:\\Users\\zerop\\Desktop\\CLC Project\\CST-227_Milestone\\milestone_MineSweeper_ConsoleApp\\milestone_MineSweeper_ConsoleApp.csproj": {
+    "C:\\Users\\donal\\source\\repos\\CST-247-Milestone-CLC\\CST-227_Milestone\\milestone_MineSweeper_ConsoleApp\\milestone_MineSweeper_ConsoleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zerop\\Desktop\\CLC Project\\CST-227_Milestone\\milestone_MineSweeper_ConsoleApp\\milestone_MineSweeper_ConsoleApp.csproj",
+        "projectUniqueName": "C:\\Users\\donal\\source\\repos\\CST-247-Milestone-CLC\\CST-227_Milestone\\milestone_MineSweeper_ConsoleApp\\milestone_MineSweeper_ConsoleApp.csproj",
         "projectName": "milestone_MineSweeper_ConsoleApp",
-        "projectPath": "C:\\Users\\zerop\\Desktop\\CLC Project\\CST-227_Milestone\\milestone_MineSweeper_ConsoleApp\\milestone_MineSweeper_ConsoleApp.csproj",
-        "packagesPath": "C:\\Users\\zerop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zerop\\Desktop\\CLC Project\\CST-227_Milestone\\milestone_MineSweeper_ConsoleApp\\obj\\",
+        "projectPath": "C:\\Users\\donal\\source\\repos\\CST-247-Milestone-CLC\\CST-227_Milestone\\milestone_MineSweeper_ConsoleApp\\milestone_MineSweeper_ConsoleApp.csproj",
+        "packagesPath": "C:\\Users\\donal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\donal\\source\\repos\\CST-247-Milestone-CLC\\CST-227_Milestone\\milestone_MineSweeper_ConsoleApp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\zerop\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\donal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -85,8 +95,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\zerop\\Desktop\\CLC Project\\CST-227_Milestone\\ClassLibrary\\ClassLibrary.csproj": {
-                "projectPath": "C:\\Users\\zerop\\Desktop\\CLC Project\\CST-227_Milestone\\ClassLibrary\\ClassLibrary.csproj"
+              "C:\\Users\\donal\\source\\repos\\CST-247-Milestone-CLC\\CST-227_Milestone\\ClassLibrary\\ClassLibrary.csproj": {
+                "projectPath": "C:\\Users\\donal\\source\\repos\\CST-247-Milestone-CLC\\CST-227_Milestone\\ClassLibrary\\ClassLibrary.csproj"
               }
             }
           }
