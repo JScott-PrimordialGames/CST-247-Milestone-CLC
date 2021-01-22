@@ -7,7 +7,7 @@ namespace Mines_Web.Models
 {
     public class CellModel
     {
-        public int Row { get; set } = -1;
+        public int Row { get; set; } = -1;
         public int Column { get; set; } = -1;
         public bool Clicked { get; set; } = false;
         public bool Live { get; set; } = false;
