@@ -7,6 +7,11 @@ namespace Mines_Web.Models
 {
     public class BoardModel
     {
+        public int ColumnSize { get; private set; }
+        public int RowSize { get; private set; }
+        public int Mines { get; private set; }
+        public CellModel[,] Grid { get; set; }
+
         public enum Difficulty : int
         {
             Beginner = 0,
@@ -28,9 +33,6 @@ namespace Mines_Web.Models
             Mines = 40
         }
 
-        public int ColumnSize { get; private set; }
-        public int RowSize { get; private set; }
-        public int Mines { get; private set; }
 
         private enum HardSetup : int
         {
@@ -39,7 +41,6 @@ namespace Mines_Web.Models
             Mines = 99
         }
 
-        public CellModel[,] Grid { get; set; }
 
         public BoardModel(BoardModel.Difficulty difficulty)
         {

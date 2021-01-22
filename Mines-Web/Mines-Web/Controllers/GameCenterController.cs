@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mines_Web.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,7 +17,8 @@ namespace Mines_Web.Controllers
 
         public ActionResult LoadGameBoard()
         {
-            return PartialView("_GameBoard");
+            BoardModel board = new BoardModel(BoardModel.Difficulty.Intermediate);
+            return PartialView("_GameBoard", board);
         }
     }
 }

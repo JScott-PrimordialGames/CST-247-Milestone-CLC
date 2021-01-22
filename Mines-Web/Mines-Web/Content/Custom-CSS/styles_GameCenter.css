@@ -17,4 +17,25 @@
 
 #game-board-content {
     height: 600px;
+    font-size: 0;
+    position: relative;
 }
+
+.cell-button {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    border-style: none;
+    border: 1px solid #C4BEBE;
+    background: #EFEFEF;
+    transition: all .2s ease-in-out;
+}
+
+    .cell-button:hover {
+        background: #E739F5;
+    }
+
+    .cell-button:focus{
+        outline: none;
+    }

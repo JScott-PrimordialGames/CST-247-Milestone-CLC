@@ -1,1 +1,12 @@
-﻿
+﻿@model Mines_Web.Models.BoardModel
+
+<div class="timer">60</div>
+
+@for (var x = 0; x < Model.ColumnSize; x++)
+{
+    for (var y = 0; y < Model.RowSize; y++)
+    {
+        <button value="@(x + " " + y)" class="cell-button"></button>
+    }
+    <br />
+}
