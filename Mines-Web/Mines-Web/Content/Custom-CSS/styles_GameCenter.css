@@ -1,0 +1,20 @@
+﻿
+.game-center-section {
+    margin: 0 10px;
+    width: 100%;
+}
+
+.game-center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.section-content {
+    border: 1px solid #707070;
+}
+
+#game-board-content {
+    height: 600px;
+}
