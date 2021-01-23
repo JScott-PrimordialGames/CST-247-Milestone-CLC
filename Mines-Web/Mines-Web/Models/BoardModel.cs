@@ -7,10 +7,12 @@ namespace Mines_Web.Models
 {
     public class BoardModel
     {
-        public int ColumnSize { get; private set; }
-        public int RowSize { get; private set; }
+        public int NumOfColumns { get; private set; }
+        public int NumOfRows { get; private set; }
         public int Mines { get; private set; }
         public CellModel[,] Grid { get; set; }
+        public int VisitedSpaces { get; set; } = 0;
+
 
         public enum Difficulty : int
         {
@@ -46,27 +48,27 @@ namespace Mines_Web.Models
         {
             if(difficulty == BoardModel.Difficulty.Beginner)
             {
-                RowSize = (int)BoardModel.BeginnerSetup.Rows;
-                ColumnSize = (int)BoardModel.BeginnerSetup.Columns;
+                NumOfRows = (int)BoardModel.BeginnerSetup.Rows;
+                NumOfColumns = (int)BoardModel.BeginnerSetup.Columns;
                 Mines = (int)BoardModel.BeginnerSetup.Mines;
             } else if(difficulty == BoardModel.Difficulty.Intermediate)
             {
-                RowSize = (int)BoardModel.IntermediateSetup.Rows;
-                ColumnSize = (int)BoardModel.IntermediateSetup.Columns;
+                NumOfRows = (int)BoardModel.IntermediateSetup.Rows;
+                NumOfColumns = (int)BoardModel.IntermediateSetup.Columns;
                 Mines = (int)BoardModel.IntermediateSetup.Mines;
             } else
             {
-                RowSize = (int)BoardModel.HardSetup.Rows;
-                ColumnSize = (int)BoardModel.HardSetup.Columns;
+                NumOfRows = (int)BoardModel.HardSetup.Rows;
+                NumOfColumns = (int)BoardModel.HardSetup.Columns;
                 Mines = (int)BoardModel.HardSetup.Mines;
             }
 
-            Grid = new CellModel[RowSize, ColumnSize];
-            for(int row = 0; row < RowSize; row++)
+            Grid = new CellModel[NumOfColumns, NumOfRows];
+            for(int row = 0; row < NumOfRows; row++)
             {
-                for(int column = 0; column < ColumnSize; column++)
+                for(int col = 0; col < NumOfColumns; col++)
                 {
-                    Grid[row, column] = new CellModel();
+                    Grid[col, row] = new CellModel(col, row);
                 }
             }
 
@@ -80,13 +82,13 @@ namespace Mines_Web.Models
             int mines = Mines;
             while(mines > 0)
             {
-                int row = rand.Next(RowSize - 1);
-                int col = rand.Next(ColumnSize - 1);
+                int row = rand.Next(NumOfRows - 1);
+                int col = rand.Next(NumOfColumns - 1);
 
-                if (Grid[row, col].Live == false)
+                if (Grid[col, row].Live == false)
                 {
-                    Grid[row, col].Live = true;
-                    Grid[row, col].LiveNeighbors = 9;
+                    Grid[col, row].Live = true;
+                    Grid[col, row].LiveNeighbors = 9;
                     mines--;
                 }
             }
@@ -94,53 +96,61 @@ namespace Mines_Web.Models
     
         private void CalculateLiveNeighbors()
         {
-            for (int row = 0; row < RowSize; row++)
+            for (int row = 0; row < NumOfRows; row++)
             {
-                for (int col = 0; col < ColumnSize; col++)
+                for (int col = 0; col < NumOfColumns; col++)
                 {
-                    if (Grid[row, col].Live == true)
+                    if (Grid[col, row].Live == true)
                     {
-                        if (isSafeCell(row - 1, col)) Grid[row - 1, col].LiveNeighbors++;
-                        if (isSafeCell(row - 1, col - 1)) Grid[row - 1, col - 1].LiveNeighbors++;
-                        if (isSafeCell(row - 1, col + 1)) Grid[row - 1, col + 1].LiveNeighbors++;
-                        if (isSafeCell(row, col - 1)) Grid[row, col - 1].LiveNeighbors++;
-                        if (isSafeCell(row, col + 1)) Grid[row, col + 1].LiveNeighbors++;
-                        if (isSafeCell(row + 1, col - 1)) Grid[row + 1, col - 1].LiveNeighbors++;
-                        if (isSafeCell(row + 1, col)) Grid[row + 1, col].LiveNeighbors++;
-                        if (isSafeCell(row + 1, col + 1)) Grid[row + 1, col + 1].LiveNeighbors++;
+                        if (isSafeCell(col - 1, row)) 
+                            Grid[col - 1, row].LiveNeighbors++;
+                        if (isSafeCell(col - 1, row - 1)) 
+                            Grid[col - 1, row - 1].LiveNeighbors++;
+                        if (isSafeCell(col - 1, row + 1)) 
+                            Grid[col - 1, row + 1].LiveNeighbors++;
+                        if (isSafeCell(col, row - 1)) 
+                            Grid[col, row - 1].LiveNeighbors++;
+                        if (isSafeCell(col, row + 1)) 
+                            Grid[col, row + 1].LiveNeighbors++;
+                        if (isSafeCell(col + 1, row - 1)) 
+                            Grid[col + 1, row - 1].LiveNeighbors++;
+                        if (isSafeCell(col + 1, row)) 
+                            Grid[col + 1, row].LiveNeighbors++;
+                        if (isSafeCell(col + 1, row + 1)) 
+                            Grid[col + 1, row + 1].LiveNeighbors++;
 
                     }
                 }
             }
         }
 
-        public void FloodFill(int row, int col)
+        public void FloodFill(int col, int row)
         {
-            Grid[row, col].Clicked = true;
-            if (Grid[row, col].LiveNeighbors == 0)
+            Grid[col, row].Visited = true;
+            VisitedSpaces++;
+            if (Grid[col, row].LiveNeighbors == 0)
             {
-                if (isSafeCell(row - 1, col - 1))
-                    FloodFill(row - 1, col - 1);
-                if (isSafeCell(row - 1, col))
-                    FloodFill(row - 1, col);
-                if (isSafeCell(row - 1, col + 1))
-                    FloodFill(row - 1, col + 1);
-                if (isSafeCell(row, col - 1))
-                    FloodFill(row, col - 1);
-                if (isSafeCell(row, col + 1))
-                    FloodFill(row, col + 1);
-                if (isSafeCell(row + 1, col - 1))
-                    FloodFill(row + 1, col - 1);
-                if (isSafeCell(row + 1, col))
-                    FloodFill(row + 1, col);
-                if (isSafeCell(row + 1, col + 1))
-                    FloodFill(row + 1, col + 1);
+                if (isSafeCell(col - 1, row - 1))
+                    FloodFill(col - 1, row - 1);
+                if (isSafeCell(col - 1, row))
+                    FloodFill(col - 1, row);
+                if (isSafeCell(col - 1, row + 1))
+                    FloodFill(col - 1, row + 1);
+                if (isSafeCell(col, row - 1))
+                    FloodFill(col, row - 1);
+                if (isSafeCell(col, row + 1))
+                    FloodFill(col, row + 1);
+                if (isSafeCell(col + 1, row - 1))
+                    FloodFill(col + 1, row - 1);
+                if (isSafeCell(col + 1, row))
+                    FloodFill(col + 1, row);
+                if (isSafeCell(col + 1, row + 1))
+                    FloodFill(col + 1, row + 1);
             }
         }
-        private bool isSafeCell(int row, int col)
+        private bool isSafeCell(int col, int row)
         {
-            return (row >= 0 && row < RowSize && col >= 0 && col < ColumnSize && !Grid[row, col].Clicked);
+            return (row >= 0 && row < NumOfRows && col >= 0 && col < NumOfColumns && !Grid[col, row].Visited);
         }
-
     }
 }

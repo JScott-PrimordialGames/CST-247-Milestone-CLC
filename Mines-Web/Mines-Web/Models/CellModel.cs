@@ -9,7 +9,7 @@ namespace Mines_Web.Models
     {
         public int Row { get; set; } = -1;
         public int Column { get; set; } = -1;
-        public bool Clicked { get; set; } = false;
+        public bool Visited { get; set; } = false;
         public bool Live { get; set; } = false;
         public bool Flagged { get; set; } = false;
         public bool Questionable { get; set; } = false;
@@ -17,18 +17,25 @@ namespace Mines_Web.Models
 
         public CellModel() { }
 
-        public CellModel (int row, int column, bool Live)
+        public CellModel (int column, int row, bool Live)
         {
             this.Row = row;
             this.Column = column;
             this.Live = Live;
         }
 
-        public CellModel (int row, int column, bool clicked, bool live, bool flagged, bool questionable, int liveNeighbors)
+        public CellModel(int column, int row)
         {
             this.Row = row;
             this.Column = column;
-            this.Clicked = clicked;
+            this.Live = false;
+        }
+
+        public CellModel (int row, int column, bool visited, bool live, bool flagged, bool questionable, int liveNeighbors)
+        {
+            this.Row = row;
+            this.Column = column;
+            this.Visited = visited;
             this.Live = live;
             this.Flagged = flagged;
             this.Questionable = questionable;

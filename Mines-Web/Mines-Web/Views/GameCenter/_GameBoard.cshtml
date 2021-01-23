@@ -2,11 +2,22 @@
 
 <div class="timer">60</div>
 
-@for (var y = 0; y < Model.ColumnSize; y++)
+
+@using (Html.BeginForm("OnCellClick", "GameCenter", FormMethod.Post))
 {
-    for (var x = 0; x < Model.RowSize; x++)
+    for (int row = 0; row < Model.NumOfRows; row++)
     {
-        <button value="@(x + " " + y)" class="cell-button"></button>
+        for (int col = 0; col < Model.NumOfColumns; col++)
+        {
+            if (Model.Grid[col, row].Visited == true)
+            {
+                <button value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited">@Model.Grid[col, row].LiveNeighbors</button>
+            }
+            else
+            {
+                <button value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button">-</button>
+            }
+        }
+        <br />
     }
-    <br />
 }

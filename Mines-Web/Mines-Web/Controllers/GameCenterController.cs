@@ -9,6 +9,8 @@ namespace Mines_Web.Controllers
 {
     public class GameCenterController : Controller
     {
+        public static BoardModel board = new BoardModel(BoardModel.Difficulty.Hard);
+        
         // GET: GameCenter
         public ActionResult Index()
         {
@@ -17,8 +19,52 @@ namespace Mines_Web.Controllers
 
         public ActionResult LoadGameBoard()
         {
-            BoardModel board = new BoardModel(BoardModel.Difficulty.Intermediate);
             return PartialView("_GameBoard", board);
+        }
+
+        public ActionResult OnCellClick(string cellLocation)
+        {
+            var coordinates = cellLocation.Split(' ');
+            int col = int.Parse(coordinates[0]);
+            int row = int.Parse(coordinates[1]);
+
+            //board.Grid[col, row].Visited = true;
+            //return View("GameCenter");
+
+
+
+            //check that cell is not flagged, and not already visited
+            if (!board.Grid[col, row].Flagged && !board.Grid[col, row].Visited)
+            {
+                // if the cell is a bomb
+                if (board.Grid[col, row].Live)
+                {
+                    return Content("you lost!");
+                }
+                // if the cell is not a bomb, check if you won
+                else if ((board.NumOfRows * board.NumOfColumns) - (board.VisitedSpaces + 1) <= board.Mines)
+                {
+                    board.Grid[col, row].Visited = true;
+                    board.VisitedSpaces++;
+                    return Content("you won!");
+                }
+                // if the cell is not a bomb and the cell has 0 live neighbors
+                else if (board.Grid[col, row].LiveNeighbors == 0)
+                {
+                    board.FloodFill(col, row);
+                    return View("GameCenter");
+                }
+                // if the cell you clicked is not a bomb, and has live neighbors
+                else
+                {
+                    board.Grid[col, row].Visited = true;
+                    board.VisitedSpaces++;
+                    return View("GameCenter");
+                }
+            } else
+            {
+                return View("GameCenter");
+            }
         }
     }
 }

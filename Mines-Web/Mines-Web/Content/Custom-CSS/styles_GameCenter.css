@@ -28,6 +28,7 @@
 }
 
 .cell-button {
+    font-size: 8px;
     width: 20px;
     height: 20px;
     margin: 0;
@@ -45,3 +46,19 @@
     .cell-button:focus{
         outline: none;
     }
+
+.cell-button-visited {
+    font-size: 8px;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    border-style: none;
+    border: 1px solid #C4BEBE;
+    background: #fff;
+    transition: all .2s ease-in-out;
+}
+
+.cell-button-visited:focus {
+    outline: none;
+}
