@@ -69,5 +69,14 @@ namespace Mines_Web.Controllers
                 return View("GameCenter");
             }
         }
+
+        public ActionResult OnCellRightClick(string cellLocation)
+        {
+            var coordinates = cellLocation.Split(' ');
+            int col = int.Parse(coordinates[0]);
+            int row = int.Parse(coordinates[1]);
+            board.Grid[col, row].Flagged = !board.Grid[col, row].Flagged;
+            return View("GameCenter");
+        }
     }
 }

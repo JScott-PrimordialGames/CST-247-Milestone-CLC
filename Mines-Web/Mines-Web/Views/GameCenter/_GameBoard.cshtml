@@ -3,11 +3,18 @@
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 
 <script>
+    $(document).contextmenu(function () {
+        return false;
+    });
+
     $(document).ready(function () {
         $(".cell-button").mousedown(function (e) {
             if (e.which == 3) {
-                
+                e.preventDefault();
                 $(this).toggleClass("flagged");
+                $.post("@Url.Action("OnCellRightClick", "GameCenter")", { cellLocation: this.getAttribute('value') }, function (data) {
+                    $("body").html(data);
+                });
             }
         });
     });
@@ -21,7 +28,11 @@
     {
         for (int col = 0; col < Model.NumOfColumns; col++)
         {
-            if (Model.Grid[col, row].Visited == true)
+            if (Model.Grid[col, row].Flagged)
+            {
+                <button value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button flagged">-</button>
+            }
+            else if (Model.Grid[col, row].Visited == true)
             {
                 if (Model.Grid[col, row].LiveNeighbors == 0)
                 {
