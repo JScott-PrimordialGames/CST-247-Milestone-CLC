@@ -58,17 +58,15 @@ namespace Mines_Web.Controllers
             {
                 if (userService.addUser(model))
                 {
-                    return Content("Congratulations! You have successfulled registed your account.");
+                    return View("SignInForm");
                 } else
                 {
-                    return Content("Sorry! There was an error registering your account. <br/>Please try again or reach out to an administrator.");
+                    return View("RegForm");
                 }
             }
             else
             {
-                return Content("The information you submitted is not valid." +
-                    "\nPlease make sure all fields match and First Name, Last Name, and Login are all longer than 4 characters and shorter than 40." +
-                    "\nPlease make sure the password field is between 4 and 20 characters.");
+                return View("RegForm");
             }
         }
     }

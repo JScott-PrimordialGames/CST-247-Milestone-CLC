@@ -117,7 +117,7 @@
 
                     //AGE
                     @Html.EditorFor(model => model.Age, new { htmlAttributes = new { type = "text", placeholder = "Age" } })
-                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger", @style = "font-size: 12px; display: block;" })
+                    @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger", @style = "font-size: 12px; display: block;" })
 
 
                     <input type="submit" class="submit-button" value="Register" />
