@@ -39,7 +39,9 @@ namespace Mines_Web.Controllers
                 // if the cell is a bomb
                 if (board.Grid[col, row].Live)
                 {
-                    return Content("you lost!");
+                    board.GameLost();
+                    return View("GameCenter");
+                    //return Content("you lost!");
                 }
                 // if the cell is not a bomb, check if you won
                 else if ((board.NumOfRows * board.NumOfColumns) - (board.VisitedSpaces + 1) <= board.Mines)

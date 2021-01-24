@@ -11,11 +11,47 @@
         {
             if (Model.Grid[col, row].Visited == true)
             {
-                <button value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited">@Model.Grid[col, row].LiveNeighbors</button>
+                <button value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited">
+                    @if(Model.Grid[col, row].LiveNeighbors == 0 && Model.Grid[col, row].Visited)
+                    {
+                        <img src="~/Images/VisitedBlank.png" width="34" height="34" />
+                    } else if(Model.Grid[col, row].LiveNeighbors == 1 && Model.Grid[col, row].Visited)
+                    {
+                        <img src="~/Images/M1.png" width="34" height="34" />
+                    }else if(Model.Grid[col, row].LiveNeighbors == 2 && Model.Grid[col, row].Visited)
+                    {
+                        <img src="~/Images/M2.png" width="34" height="34" />
+                    }else if(Model.Grid[col, row].LiveNeighbors == 3 && Model.Grid[col, row].Visited)
+                    {
+                        <img src="~/Images/M3.png" width="34" height="34" />
+                    }else if(Model.Grid[col, row].LiveNeighbors == 4 && Model.Grid[col, row].Visited)
+                    {
+                        <img src="~/Images/M4.png" width="34" height="34" />
+                    }else if(Model.Grid[col, row].LiveNeighbors == 5 && Model.Grid[col, row].Visited)
+                    {
+                        <img src="~/Images/M5.png" width="34" height="34" />
+                    }else if(Model.Grid[col, row].LiveNeighbors == 6 && Model.Grid[col, row].Visited)
+                    {
+                        <img src="~/Images/M6.png" width="34" height="34" />
+                    }
+                    else if(Model.Grid[col, row].LiveNeighbors == 7 && Model.Grid[col, row].Visited)
+                    {
+                        <img src="~/Images/M7.png" width="34" height="34" />
+                    }
+                    else if(Model.Grid[col, row].LiveNeighbors == 8 && Model.Grid[col, row].Visited)
+                    {
+                        <img src="~/Images/M8.png" width="34" height="34" />
+                    } else if(Model.Grid[col, row].Live == true && Model.Grid[col, row].Visited)
+                    {
+                        <img src="~/Images/MBomb.png" width="34" height="34" />
+                    }
+                </button>
             }
             else
             {
-                <button value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button">-</button>
+                <button value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button">
+                    <img src="~/Images/MBlank.png" width="34" height="34" />
+                </button>
             }
         }
         <br />

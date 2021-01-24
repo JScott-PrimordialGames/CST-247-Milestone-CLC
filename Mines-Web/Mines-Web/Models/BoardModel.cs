@@ -152,5 +152,16 @@ namespace Mines_Web.Models
         {
             return (row >= 0 && row < NumOfRows && col >= 0 && col < NumOfColumns && !Grid[col, row].Visited);
         }
+
+        public void GameLost()
+        {
+            for(int row = 0; row < NumOfRows; row++)
+            {
+                for(int col = 0; col < NumOfColumns; col++)
+                {
+                    Grid[col, row].Visited = true;
+                }
+            }
+        }
     }
 }
