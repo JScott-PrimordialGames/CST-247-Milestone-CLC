@@ -1,7 +1,19 @@
 ﻿@model Mines_Web.Models.BoardModel
 
-<div class="timer">60</div>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
 
+<script>
+    $(document).ready(function () {
+        $(".cell-button").mousedown(function (e) {
+            if (e.which == 3) {
+                
+                $(this).toggleClass("flagged");
+            }
+        });
+    });
+</script>
+
+<div class="timer">60</div>
 
 @using (Html.BeginForm("OnCellClick", "GameCenter", FormMethod.Post))
 {
@@ -11,50 +23,54 @@
         {
             if (Model.Grid[col, row].Visited == true)
             {
-                <button value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited">
-                    @if(Model.Grid[col, row].Detonated)
-                    {
-                        <img src="~/Images/MBombDetonated.png" width="34" height="34" />
-                    } else if(Model.Grid[col, row].LiveNeighbors == 0 && Model.Grid[col, row].Visited)
-                    {
-                        <img src="~/Images/MBlank.png" width="34" height="34" />
-                    } else if(Model.Grid[col, row].LiveNeighbors == 1 && Model.Grid[col, row].Visited)
-                    {
-                        <img src="~/Images/M1.png" width="34" height="34" />
-                    }else if(Model.Grid[col, row].LiveNeighbors == 2 && Model.Grid[col, row].Visited)
-                    {
-                        <img src="~/Images/M2.png" width="34" height="34" />
-                    }else if(Model.Grid[col, row].LiveNeighbors == 3 && Model.Grid[col, row].Visited)
-                    {
-                        <img src="~/Images/M3.png" width="34" height="34" />
-                    }else if(Model.Grid[col, row].LiveNeighbors == 4 && Model.Grid[col, row].Visited)
-                    {
-                        <img src="~/Images/M4.png" width="34" height="34" />
-                    }else if(Model.Grid[col, row].LiveNeighbors == 5 && Model.Grid[col, row].Visited)
-                    {
-                        <img src="~/Images/M5.png" width="34" height="34" />
-                    }else if(Model.Grid[col, row].LiveNeighbors == 6 && Model.Grid[col, row].Visited)
-                    {
-                        <img src="~/Images/M6.png" width="34" height="34" />
-                    }
-                    else if(Model.Grid[col, row].LiveNeighbors == 7 && Model.Grid[col, row].Visited)
-                    {
-                        <img src="~/Images/M7.png" width="34" height="34" />
-                    }
-                    else if(Model.Grid[col, row].LiveNeighbors == 8 && Model.Grid[col, row].Visited)
-                    {
-                        <img src="~/Images/M8.png" width="34" height="34" />
-                    } else if(Model.Grid[col, row].Live == true && Model.Grid[col, row].Visited)
-                    {
-                        <img src="~/Images/MBomb.png" width="34" height="34" />
-                    }
-                </button>
+                if (Model.Grid[col, row].LiveNeighbors == 0)
+                {
+                    <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-zero">-</button>
+                }
+                else if (Model.Grid[col, row].LiveNeighbors == 1)
+                {
+                    <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-one">-</button>
+                }
+                else if (Model.Grid[col, row].LiveNeighbors == 2)
+                {
+                    <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-two">-</button>
+                }
+                else if (Model.Grid[col, row].LiveNeighbors == 3)
+                {
+                    <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-three">-</button>
+                }
+                else if (Model.Grid[col, row].LiveNeighbors == 4)
+                {
+                    <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-four">-</button>
+                }
+                else if (Model.Grid[col, row].LiveNeighbors == 5)
+                {
+                    <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-five">-</button>
+                }
+                else if (Model.Grid[col, row].LiveNeighbors == 6)
+                {
+                    <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-sex">-</button>
+                }
+                else if (Model.Grid[col, row].LiveNeighbors == 7)
+                {
+                    <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-seven">-</button>
+                }
+                else if (Model.Grid[col, row].LiveNeighbors == 8)
+                {
+                    <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-eight">-</button>
+                }
+                else if (Model.Grid[col, row].Detonated)
+                {
+                    <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-detonated">-</button>
+                }
+                else if (Model.Grid[col, row].Live)
+                {
+                    <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-bomb">-</button>
+                }
             }
             else
             {
-                <button value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button">
-                    <img src="~/Images/MUnvisited.png" width="34" height="34" />
-                </button>
+                <button value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button">-</button>
             }
         }
         <br />
