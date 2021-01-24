@@ -12,9 +12,12 @@
             if (Model.Grid[col, row].Visited == true)
             {
                 <button value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited">
-                    @if(Model.Grid[col, row].LiveNeighbors == 0 && Model.Grid[col, row].Visited)
+                    @if(Model.Grid[col, row].Detonated)
                     {
-                        <img src="~/Images/VisitedBlank.png" width="34" height="34" />
+                        <img src="~/Images/MBombDetonated.png" width="34" height="34" />
+                    } else if(Model.Grid[col, row].LiveNeighbors == 0 && Model.Grid[col, row].Visited)
+                    {
+                        <img src="~/Images/MBlank.png" width="34" height="34" />
                     } else if(Model.Grid[col, row].LiveNeighbors == 1 && Model.Grid[col, row].Visited)
                     {
                         <img src="~/Images/M1.png" width="34" height="34" />
@@ -50,7 +53,7 @@
             else
             {
                 <button value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button">
-                    <img src="~/Images/MBlank.png" width="34" height="34" />
+                    <img src="~/Images/MUnvisited.png" width="34" height="34" />
                 </button>
             }
         }

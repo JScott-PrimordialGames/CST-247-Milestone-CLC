@@ -39,6 +39,7 @@ namespace Mines_Web.Controllers
                 // if the cell is a bomb
                 if (board.Grid[col, row].Live)
                 {
+                    board.Grid[col, row].Detonated = true;
                     board.GameLost();
                     return View("GameCenter");
                     //return Content("you lost!");

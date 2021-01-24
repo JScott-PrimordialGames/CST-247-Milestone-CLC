@@ -15,6 +15,8 @@ namespace Mines_Web.Models
         public bool Questionable { get; set; } = false;
         public int LiveNeighbors { get; set; } = 0;
 
+        public bool Detonated { get; set; } = false;
+
         public CellModel() { }
 
         public CellModel (int column, int row, bool Live)

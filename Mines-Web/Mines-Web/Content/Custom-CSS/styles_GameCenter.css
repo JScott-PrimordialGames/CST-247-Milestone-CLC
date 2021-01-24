@@ -63,3 +63,6 @@
     outline: none;
 }
 
+.cell-button-visited img {
+    border: 1px solid black;
+}
