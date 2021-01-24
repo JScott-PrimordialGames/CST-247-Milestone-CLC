@@ -28,41 +28,126 @@
 }
 
 .cell-button {
-    font-size: 8px;
     width: 34px;
     height: 34px;
     margin: 0;
     padding: 0;
     border-style: none;
     border: 1px solid #C4BEBE;
-    background: #EFEFEF;
     transition: all .2s ease-in-out;
+    background: url(/Images/MUnvisited.jpg);
 }
 
-    .cell-button:hover {
+    .cell-button:not(.flagged):hover {
         background: #E739F5;
     }
 
-    .cell-button:focus{
+    .cell-button:focus {
         outline: none;
     }
 
 .cell-button-visited {
-    font-size: 8px;
     width: 34px;
     height: 34px;
     margin: 0;
     padding: 0;
     border-style: none;
     border: 1px solid #C4BEBE;
-    background: #fff;
     transition: all .2s ease-in-out;
+    overflow: hidden;
 }
 
-.cell-button-visited:focus {
-    outline: none;
+    .cell-button-visited:focus {
+        outline: none;
+    }
+
+.cell-button-visited-zero {
+    background: url(/Images/white.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.cell-button-visited img {
+.cell-button-visited-one {
+    background: url(/Images/M1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cell-button-visited-two {
+    background: url(/Images/M2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cell-button-visited-three {
+    background: url(/Images/M3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cell-button-visited-four {
+    background: url(/Images/M4.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cell-button-visited-five {
+    background: url(/Images/M5.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cell-button-visited-six {
+    background: url(/Images/M6.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cell-button-visited-seven {
+    background: url(/Images/M7.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cell-button-visited-eight {
+    background: url(/Images/M8.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cell-button-visited-bomb {
+    background: url(/Images/MBomb.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cell-button-visited-detonated {
+    background: url(/Images/MBombDetonated.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.flagged {
+    background: url(/Images/radiation-solid.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+/*.cell-button-visited img {
     border: 1px solid black;
-}
+}*/

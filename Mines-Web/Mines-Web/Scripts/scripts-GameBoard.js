@@ -1,7 +1,5 @@
-﻿const cells = document.querySelectorAll(".cell-button");
-
-cells.forEach((cell) =>
-    cell.addEventListener("contextmenu", () => {
-        cell.classList.toggle("flagged");
-    })
-);
+﻿
+//disable the context menu when flagging
+window.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+}, false);
