@@ -12,26 +12,18 @@
     <header>
         <!-- Fixed navbar -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            @Html.ActionLink("Mines", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })
+                    <li>
+                        @Html.ActionLink("Login", "SignInForm", "SignIn", new { area = "" }, new { @class = "nav-link" })
                     </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })
-                    </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })
+                    <li>
+                        @Html.ActionLink("Registration", "RegForm", "SignIn", new { area = "" }, new { @class = "nav-link" })
                     </li>
                 </ul>
-
-                @Html.ActionLink("Sign in", "SignInForm", "SignIn", new { area = "" }, new { @class = "btn btn-outline-light my-2 mx-2" })
-                @Html.ActionLink("Register", "RegForm", "SignIn", new { area = "" }, new { @class = "btn btn-outline-register my-2" })
             </div>
         </nav>
     </header>

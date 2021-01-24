@@ -18,11 +18,9 @@
                 @Html.AntiForgeryToken()
 
                 <div class="login-page-form-title">Sign in</div>
-
+                @Html.ValidationSummary(false, "", new { @class="text-danger"})
                 @Html.EditorFor(model => model.Username, new { htmlAttributes = new { type = "text", placeholder = "Username" } })
-
                 @Html.EditorFor(model => model.Password, new { htmlAttributes = new { type = "password", placeholder = "Password" } })
-
                 <input type="submit" class="submit-button" value="Sign In" />
 
                 @Html.ActionLink("Register", "RegForm", "", new { @class = "switch-form-button" })
