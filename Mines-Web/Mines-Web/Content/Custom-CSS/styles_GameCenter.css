@@ -16,7 +16,7 @@
 }
 
 #game-board-content {
-    height: 600px;
+    height: 654px;
     font-size: 0;
     position: relative;
 }
@@ -28,8 +28,8 @@
 }
 
 .cell-button {
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
     margin: 0;
     padding: 0;
     border-style: none;
@@ -47,8 +47,8 @@
     }
 
 .cell-button-visited {
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
     margin: 0;
     padding: 0;
     border-style: none;
@@ -145,7 +145,10 @@
     background-size: cover;
 }
 
-
+.game-difficulty-button{
+    width: 272px;
+    font-size:14px;
+}
 
 
 /*.cell-button-visited img {

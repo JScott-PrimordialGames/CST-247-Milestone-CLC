@@ -206,6 +206,7 @@
     <Content Include="Views\SignIn\RegForm.cshtml" />
     <Content Include="Views\GameCenter\GameCenter.cshtml" />
     <Content Include="Views\GameCenter\_GameBoard.cshtml" />
+    <Content Include="Views\GameCenter\_DifficultySelector.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

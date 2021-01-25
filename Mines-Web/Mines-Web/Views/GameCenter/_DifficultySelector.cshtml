@@ -1,0 +1,8 @@
+﻿
+@using (Html.BeginForm("LoadNewGameBoard", "GameCenter", FormMethod.Post, new { style = "width:100%" }))
+{
+    <button value="Beginner" type="submit" name="difficulty" class="game-difficulty-button">Beginner</button>
+    <button value="Intermediate" type="submit" name="difficulty" class="game-difficulty-button">Intermediate</button>
+    <button value="Expert" type="submit" name="difficulty" class="game-difficulty-button">Expert</button>
+    <button value="Restart" type="submit" name="difficulty" class="game-difficulty-button">Restart</button>
+}

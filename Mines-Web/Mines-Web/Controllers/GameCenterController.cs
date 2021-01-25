@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Diagnostics;
 
 namespace Mines_Web.Controllers
 {
     public class GameCenterController : Controller
     {
-        public static BoardModel board = new BoardModel(BoardModel.Difficulty.Hard);
+        public static BoardModel board = new BoardModel(BoardModel.Difficulty.Beginner);
+        public static BoardModel.Difficulty gameDifficulty = BoardModel.Difficulty.Beginner;
         
         // GET: GameCenter
         public ActionResult Index()
@@ -20,6 +22,26 @@ namespace Mines_Web.Controllers
         public ActionResult LoadGameBoard()
         {
             return PartialView("_GameBoard", board);
+        }
+
+        public ActionResult LoadNewGameBoard(string difficulty = "Beginner")
+        {
+            if (difficulty == "Beginner")
+            {
+                gameDifficulty = BoardModel.Difficulty.Beginner;
+            }
+            else if (difficulty == "Intermediate")
+            {
+                gameDifficulty = BoardModel.Difficulty.Intermediate;
+            }
+            else if (difficulty == "Expert")
+            {
+                gameDifficulty = BoardModel.Difficulty.Hard;
+            } 
+
+            board = new BoardModel(gameDifficulty);
+
+            return View("GameCenter");
         }
 
         public ActionResult OnCellClick(string cellLocation)

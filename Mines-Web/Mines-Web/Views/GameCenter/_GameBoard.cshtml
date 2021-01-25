@@ -22,6 +22,8 @@
 
 <div class="timer">60</div>
 
+@Html.Partial("_DifficultySelector")
+
 @using (Html.BeginForm("OnCellClick", "GameCenter", FormMethod.Post))
 {
     for (int row = 0; row < Model.NumOfRows; row++)
