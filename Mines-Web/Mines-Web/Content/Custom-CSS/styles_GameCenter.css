@@ -34,7 +34,7 @@
     padding: 0;
     border-style: none;
     border: 1px solid #C4BEBE;
-    transition: all .2s ease-in-out;
+    transition: background .2s ease-in-out;
     background: url(/Images/MUnvisited.jpg);
 }
 
@@ -139,7 +139,7 @@
 }
 
 .flagged {
-    background: url(/Images/radiation-solid.svg);
+    background: url(/Images/MFlagged.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

@@ -166,10 +166,9 @@
     <Content Include="Images\M8.jpg" />
     <Content Include="Images\MBomb.png" />
     <Content Include="Images\MBombDetonated.png" />
-    <Content Include="Images\MFlag.png" />
+    <Content Include="Images\MFlagged.jpg" />
     <Content Include="Images\MUnvisited.jpg" />
     <Content Include="Images\MVisited.jpg" />
-    <Content Include="Images\radiation-solid.svg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
