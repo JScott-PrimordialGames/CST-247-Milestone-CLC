@@ -11,14 +11,24 @@
     flex-wrap: wrap;
 }
 
+#game-board-section{
+    width: fit-content;
+}
+
 .section-content {
     border: 1px solid #707070;
 }
 
 #game-board-content {
-    height: 654px;
+    height: auto;
+    width: auto;
     font-size: 0;
     position: relative;
+}
+
+#difficulty-selector{
+    font-size: 12pt;
+
 }
 
 .timer {
@@ -28,8 +38,8 @@
 }
 
 .cell-button {
-    width: 36px;
-    height: 36px;
+    width: 28px;
+    height: 28px;
     margin: 0;
     padding: 0;
     border-style: none;
@@ -47,8 +57,8 @@
     }
 
 .cell-button-visited {
-    width: 36px;
-    height: 36px;
+    width: 28px;
+    height: 28px;
     margin: 0;
     padding: 0;
     border-style: none;
@@ -145,10 +155,7 @@
     background-size: cover;
 }
 
-.game-difficulty-button{
-    width: 272px;
-    font-size:14px;
-}
+
 
 
 /*.cell-button-visited img {
