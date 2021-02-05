@@ -20,18 +20,39 @@
 }
 
 #game-board-content {
-    height: auto;
-    width: auto;
+    height: 580px;
+    width: 842px;
     font-size: 0;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#difficulty-selector{
-    font-size: 12pt;
+.game-form{
+    margin: 10px 0;
+}
 
+.difficulty-selector-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#difficulty-selector {
+    font-size: 12pt;
 }
 
 .timer {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 33px;
     color: #61D9DE;
     text-align: center;

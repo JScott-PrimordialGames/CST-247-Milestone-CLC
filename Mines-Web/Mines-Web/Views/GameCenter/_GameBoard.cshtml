@@ -22,70 +22,75 @@
 
 <div class="timer">60</div>
 
-
-@using (Html.BeginForm("OnCellClick", "GameCenter", FormMethod.Post))
-{
-    for (int row = 0; row < Model.NumOfRows; row++)
-    {
-        for (int col = 0; col < Model.NumOfColumns; col++)
+<div class="game-wrapper">
+    <div class="game-form">
+        @using (Html.BeginForm("OnCellClick", "GameCenter", FormMethod.Post))
         {
-            if (Model.Grid[col, row].Flagged)
+            for (int row = 0; row < Model.NumOfRows; row++)
             {
-                <button value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button flagged">-</button>
-            }
-            else if (Model.Grid[col, row].Visited == true)
-            {
-                if (Model.Grid[col, row].LiveNeighbors == 0)
+                for (int col = 0; col < Model.NumOfColumns; col++)
                 {
-                    <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-zero">-</button>
+                    if (Model.Grid[col, row].Flagged)
+                    {
+                        <button value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button flagged">-</button>
+                    }
+                    else if (Model.Grid[col, row].Visited == true)
+                    {
+                        if (Model.Grid[col, row].LiveNeighbors == 0)
+                        {
+                            <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-zero">-</button>
+                        }
+                        else if (Model.Grid[col, row].LiveNeighbors == 1)
+                        {
+                            <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-one">-</button>
+                        }
+                        else if (Model.Grid[col, row].LiveNeighbors == 2)
+                        {
+                            <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-two">-</button>
+                        }
+                        else if (Model.Grid[col, row].LiveNeighbors == 3)
+                        {
+                            <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-three">-</button>
+                        }
+                        else if (Model.Grid[col, row].LiveNeighbors == 4)
+                        {
+                            <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-four">-</button>
+                        }
+                        else if (Model.Grid[col, row].LiveNeighbors == 5)
+                        {
+                            <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-five">-</button>
+                        }
+                        else if (Model.Grid[col, row].LiveNeighbors == 6)
+                        {
+                            <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-sex">-</button>
+                        }
+                        else if (Model.Grid[col, row].LiveNeighbors == 7)
+                        {
+                            <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-seven">-</button>
+                        }
+                        else if (Model.Grid[col, row].LiveNeighbors == 8)
+                        {
+                            <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-eight">-</button>
+                        }
+                        else if (Model.Grid[col, row].Detonated)
+                        {
+                            <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-detonated">-</button>
+                        }
+                        else if (Model.Grid[col, row].Live)
+                        {
+                            <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-bomb">-</button>
+                        }
+                    }
+                    else
+                    {
+                        <button value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button">-</button>
+                    }
                 }
-                else if (Model.Grid[col, row].LiveNeighbors == 1)
-                {
-                    <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-one">-</button>
-                }
-                else if (Model.Grid[col, row].LiveNeighbors == 2)
-                {
-                    <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-two">-</button>
-                }
-                else if (Model.Grid[col, row].LiveNeighbors == 3)
-                {
-                    <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-three">-</button>
-                }
-                else if (Model.Grid[col, row].LiveNeighbors == 4)
-                {
-                    <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-four">-</button>
-                }
-                else if (Model.Grid[col, row].LiveNeighbors == 5)
-                {
-                    <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-five">-</button>
-                }
-                else if (Model.Grid[col, row].LiveNeighbors == 6)
-                {
-                    <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-sex">-</button>
-                }
-                else if (Model.Grid[col, row].LiveNeighbors == 7)
-                {
-                    <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-seven">-</button>
-                }
-                else if (Model.Grid[col, row].LiveNeighbors == 8)
-                {
-                    <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-eight">-</button>
-                }
-                else if (Model.Grid[col, row].Detonated)
-                {
-                    <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-detonated">-</button>
-                }
-                else if (Model.Grid[col, row].Live)
-                {
-                    <button disabled value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button-visited cell-button-visited-bomb">-</button>
-                }
-            }
-            else
-            {
-                <button value="@(col + " " + row)" type="submit" name="cellLocation" class="cell-button">-</button>
+                <br />
             }
         }
-        <br />
-    }
-}
-@Html.Partial("_DifficultySelector")
+    </div>
+</div>
+<div class="difficulty-selector-container">
+    @Html.Partial("_DifficultySelector")
+</div>
