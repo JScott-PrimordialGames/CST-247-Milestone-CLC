@@ -58,7 +58,11 @@
     text-align: center;
 }
 
-.cell-button {
+div, input{
+    display: inline-block;
+}
+
+.cell {
     width: 28px;
     height: 28px;
     margin: 0;
@@ -66,119 +70,111 @@
     border-style: none;
     border: 1px solid #C4BEBE;
     transition: background .2s ease-in-out;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cell-not-visited {
     background: url(/Images/MUnvisited.jpg);
 }
 
-    .cell-button:not(.flagged):hover {
+    .cell-not-visited:not(.flagged):hover {
         background: #E739F5;
     }
 
-    .cell-button:focus {
+    .cell:focus {
         outline: none;
     }
 
-.cell-button-visited {
-    width: 28px;
-    height: 28px;
-    margin: 0;
-    padding: 0;
-    border-style: none;
-    border: 1px solid #C4BEBE;
-    transition: all .2s ease-in-out;
+.cell-visited {
     overflow: hidden;
 }
 
-    .cell-button-visited:focus {
+    .cell-visited:focus {
         outline: none;
     }
 
-.cell-button-visited-zero {
+.cell-visited-zero {
     background: url(/Images/white.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.cell-button-visited-one {
+.cell-visited-one {
     background: url(/Images/M1.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.cell-button-visited-two {
+.cell-visited-two {
     background: url(/Images/M2.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.cell-button-visited-three {
+.cell-visited-three {
     background: url(/Images/M3.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.cell-button-visited-four {
+.cell-visited-four {
     background: url(/Images/M4.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.cell-button-visited-five {
+.cell-visited-five {
     background: url(/Images/M5.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.cell-button-visited-six {
+.cell-visited-six {
     background: url(/Images/M6.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.cell-button-visited-seven {
+.cell-visited-seven {
     background: url(/Images/M7.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.cell-button-visited-eight {
+.cell-visited-eight {
     background: url(/Images/M8.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.cell-button-visited-bomb {
+.cell-visited-bomb {
     background: url(/Images/MBomb.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.cell-button-visited-detonated {
+.cell-visited-detonated {
     background: url(/Images/MBombDetonated.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.flagged {
+.cell-not-visited.flagged {
     background: url(/Images/MFlagged.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-
-
-
-/*.cell-button-visited img {
-    border: 1px solid black;
-}*/

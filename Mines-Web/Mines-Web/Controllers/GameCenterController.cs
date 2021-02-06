@@ -50,10 +50,6 @@ namespace Mines_Web.Controllers
             int col = int.Parse(coordinates[0]);
             int row = int.Parse(coordinates[1]);
 
-            //board.Grid[col, row].Visited = true;
-            //return View("GameCenter");
-
-
 
             //check that cell is not flagged, and not already visited
             if (!board.Grid[col, row].Flagged && !board.Grid[col, row].Visited)
@@ -63,32 +59,31 @@ namespace Mines_Web.Controllers
                 {
                     board.Grid[col, row].Detonated = true;
                     board.GameLost();
-                    return View("GameCenter");
-                    //return Content("you lost!");
+                    return PartialView("_GameBoard", board);
                 }
                 // if the cell is not a bomb, check if you won
                 else if ((board.NumOfRows * board.NumOfColumns) - (board.VisitedSpaces + 1) <= board.Mines)
                 {
                     board.Grid[col, row].Visited = true;
                     board.VisitedSpaces++;
-                    return Content("you won!");
+                    return Content("You Won!!!");
                 }
                 // if the cell is not a bomb and the cell has 0 live neighbors
                 else if (board.Grid[col, row].LiveNeighbors == 0)
                 {
                     board.FloodFill(col, row);
-                    return View("GameCenter");
+                    return PartialView("_GameBoard", board);
                 }
                 // if the cell you clicked is not a bomb, and has live neighbors
                 else
                 {
                     board.Grid[col, row].Visited = true;
                     board.VisitedSpaces++;
-                    return View("GameCenter");
+                    return PartialView("_GameBoard", board);
                 }
             } else
             {
-                return View("GameCenter");
+                return PartialView("_GameBoard", board);
             }
         }
 
