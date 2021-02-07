@@ -12,6 +12,7 @@ namespace Mines_Web.Models
         public int Mines { get; private set; }
         public CellModel[,] Grid { get; set; }
         public int VisitedSpaces { get; set; } = 0;
+        public bool GameWon{ get; set; } = false;
 
 
         public enum Difficulty : int

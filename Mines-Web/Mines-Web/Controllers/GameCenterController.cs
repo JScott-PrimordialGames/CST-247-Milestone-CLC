@@ -66,7 +66,8 @@ namespace Mines_Web.Controllers
                 {
                     board.Grid[col, row].Visited = true;
                     board.VisitedSpaces++;
-                    return Content("You Won!!!");
+                    board.GameWon = true;
+                    return PartialView("_GameBoard", board);
                 }
                 // if the cell is not a bomb and the cell has 0 live neighbors
                 else if (board.Grid[col, row].LiveNeighbors == 0)
