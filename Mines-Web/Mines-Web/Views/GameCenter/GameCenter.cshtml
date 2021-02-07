@@ -4,6 +4,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="~/Content/Custom-CSS/styles_GameCenter.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
 
 <h2>GameCenter</h2>
 
@@ -12,9 +14,23 @@
     <section id="game-board-section" class="game-center-section">
         <div id="game-board-section-title" class="section-title">MineSweeper</div>
         <div id="game-board-content" class="section-content">
-            @Html.Action("LoadGameBoard","GameCenter")
+            <div class="timer">60</div>
+
+
+
+
+            <div id="cells-wrapper">
+
+                @Html.Action("LoadGameBoard", "GameCenter")
+            </div>
+
+
+            <div class="difficulty-selector-container">
+                @Html.Partial("_DifficultySelector")
+            </div>
+
         </div>
-    </section>
+</section>
 
     <section id="saved-games-section" class="game-center-section">
         <div id="saved-games-section-title" class="section-title">Saved Games</div>

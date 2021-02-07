@@ -157,6 +157,8 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Images\comic.jpg" />
+    <Content Include="Images\favicon.png" />
     <Content Include="Images\M1.jpg" />
     <Content Include="Images\M2.jpg" />
     <Content Include="Images\M3.jpg" />
@@ -167,10 +169,10 @@
     <Content Include="Images\M8.jpg" />
     <Content Include="Images\MBomb.png" />
     <Content Include="Images\MBombDetonated.png" />
-    <Content Include="Images\MFlag.png" />
+    <Content Include="Images\MFlagged.jpg" />
+    <Content Include="Images\mines_logo_transparent_back.png" />
     <Content Include="Images\MUnvisited.jpg" />
     <Content Include="Images\MVisited.jpg" />
-    <Content Include="Images\radiation-solid.svg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -180,6 +182,8 @@
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -208,6 +212,7 @@
     <Content Include="Views\GameCenter\GameCenter.cshtml" />
     <Content Include="Views\GameCenter\_GameBoard.cshtml" />
     <Content Include="Views\GameCenter\_DifficultySelector.cshtml" />
+    <Content Include="Views\GameCenter\_GameWon.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

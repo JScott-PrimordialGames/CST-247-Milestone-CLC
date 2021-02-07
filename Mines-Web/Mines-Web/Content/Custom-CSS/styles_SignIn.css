@@ -35,14 +35,25 @@ form {
     height: auto;
 }
 
+.logo-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 30px 0 30px 0;
+}
+
+#login-page-main-logo{
+    height: 115px;
+}
+
+
 
 .wrapper{
     width: 100%;
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: -100px;
 }
 
 .form-container {
@@ -55,7 +66,7 @@ form {
 .login-page-form {
     min-height: 300px;
     /*max-height: 500px;*/
-    margin: 100px 0 100px 0;
+    margin: 0 0 100px 0;
     min-width: 350px;
     overflow: scroll;
     padding: 30px;
@@ -63,7 +74,7 @@ form {
     border-radius: 8px;
     display: flex;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.75);
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.5);
 }
 
@@ -81,8 +92,8 @@ select{
     width: 250px;
     height: 35px;
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 2px;
+    border: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
     color: #fff;
     font-family: "Exo", sans-serif;
     font-size: 16px;
@@ -97,18 +108,22 @@ select{
     .select:focus
     {
         outline: none;
-        border: 1px solid rgba(255, 255, 255, 0.9);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.6);
         transition: all .3s ease-in-out;
     }
 
 select {
     color: #8387a1;
-    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
 }
 
     select:active {
         outline: none;
-        border: 1px solid rgba(255, 255, 255, 0.9);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    select:focus {
+        outline: none;
     }
 
 .submit-button {
@@ -152,4 +167,8 @@ select {
             width: 325px;
             height: 40px;
         }
+
+    #login-page-main-logo {
+        height: 200px;
+    }
 }

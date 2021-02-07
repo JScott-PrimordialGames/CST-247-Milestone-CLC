@@ -6,6 +6,9 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link rel="icon"
+          type="image/png"
+          href="~/Images/favicon.png" />
 </head>
 <body>
 
@@ -30,9 +33,9 @@
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
+            <hr id="footer-hr" />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Mines on Web</p>
         </footer>
     </div>
 

@@ -11,146 +11,182 @@
     flex-wrap: wrap;
 }
 
+#game-board-section{
+    width: fit-content;
+}
+
 .section-content {
     border: 1px solid #707070;
 }
 
 #game-board-content {
-    height: 654px;
+    height: 580px;
+    width: 842px;
     font-size: 0;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-form{
+    margin: 10px 0;
+}
+
+.difficulty-selector-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#difficulty-selector {
+    font-size: 12pt;
 }
 
 .timer {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 33px;
     color: #61D9DE;
     text-align: center;
 }
 
-.cell-button {
-    width: 36px;
-    height: 36px;
+div, input{
+    display: inline-block;
+}
+
+.cell {
+    width: 28px;
+    height: 28px;
     margin: 0;
     padding: 0;
     border-style: none;
     border: 1px solid #C4BEBE;
-    transition: all .2s ease-in-out;
+    transition: background .2s ease-in-out;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cell-not-visited {
     background: url(/Images/MUnvisited.jpg);
 }
 
-    .cell-button:not(.flagged):hover {
+    .cell-not-visited:not(.flagged):hover {
         background: #E739F5;
     }
 
-    .cell-button:focus {
+    .cell:focus {
         outline: none;
     }
 
-.cell-button-visited {
-    width: 36px;
-    height: 36px;
-    margin: 0;
-    padding: 0;
-    border-style: none;
-    border: 1px solid #C4BEBE;
-    transition: all .2s ease-in-out;
+.cell-visited {
     overflow: hidden;
 }
 
-    .cell-button-visited:focus {
+    .cell-visited:focus {
         outline: none;
     }
 
-.cell-button-visited-zero {
+.cell-visited-zero {
     background: url(/Images/white.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.cell-button-visited-one {
+.cell-visited-one {
     background: url(/Images/M1.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.cell-button-visited-two {
+.cell-visited-two {
     background: url(/Images/M2.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.cell-button-visited-three {
+.cell-visited-three {
     background: url(/Images/M3.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.cell-button-visited-four {
+.cell-visited-four {
     background: url(/Images/M4.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.cell-button-visited-five {
+.cell-visited-five {
     background: url(/Images/M5.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.cell-button-visited-six {
+.cell-visited-six {
     background: url(/Images/M6.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.cell-button-visited-seven {
+.cell-visited-seven {
     background: url(/Images/M7.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.cell-button-visited-eight {
+.cell-visited-eight {
     background: url(/Images/M8.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.cell-button-visited-bomb {
+.cell-visited-bomb {
     background: url(/Images/MBomb.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.cell-button-visited-detonated {
+.cell-visited-detonated {
     background: url(/Images/MBombDetonated.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.flagged {
-    background: url(/Images/radiation-solid.svg);
+.cell-not-visited.flagged {
+    background: url(/Images/MFlagged.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.game-difficulty-button{
-    width: 272px;
-    font-size:14px;
+.game-won-banner {
+    padding: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border: 3px solid black;
+    z-index: 100;
+    font-size: 30px;
 }
-
-
-/*.cell-button-visited img {
-    border: 1px solid black;
-}*/
