@@ -17,9 +17,14 @@
             }
         });
     });
+
+    function refreshTimer() {
+        setTimeout($("#timer").load("timer"), 10000);
+    }
+
 </script>
 
-<div class="timer">@Model.GetPlayTime()</div>
+<div class="timer" id="timer">@Model.GetPlayTime()</div>
     @using (Ajax.BeginForm("OnCellClick", "GameCenter", new AjaxOptions
     {
         HttpMethod = "POST",
