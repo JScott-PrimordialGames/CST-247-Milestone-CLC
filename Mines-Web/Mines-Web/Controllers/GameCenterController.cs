@@ -50,6 +50,10 @@ namespace Mines_Web.Controllers
             int col = int.Parse(coordinates[0]);
             int row = int.Parse(coordinates[1]);
 
+            if(board.VisitedSpaces == 0)
+            {
+                board.StartClock(); 
+            }
 
             //check that cell is not flagged, and not already visited
             if (!board.Grid[col, row].Flagged && !board.Grid[col, row].Visited)
@@ -64,6 +68,7 @@ namespace Mines_Web.Controllers
                 // if the cell is not a bomb, check if you won
                 else if ((board.NumOfRows * board.NumOfColumns) - (board.VisitedSpaces + 1) <= board.Mines)
                 {
+                    board.StopClock();
                     board.Grid[col, row].Visited = true;
                     board.VisitedSpaces++;
                     board.GameWon = true;

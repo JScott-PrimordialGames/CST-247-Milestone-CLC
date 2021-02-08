@@ -19,7 +19,7 @@
     });
 </script>
 
-
+<div class="timer">@Model.GetPlayTime()</div>
     @using (Ajax.BeginForm("OnCellClick", "GameCenter", new AjaxOptions
     {
         HttpMethod = "POST",
