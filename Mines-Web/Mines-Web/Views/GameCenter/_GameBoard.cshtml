@@ -25,79 +25,86 @@
 </script>
 
 <div class="timer" id="timer">@Model.GetPlayTime()</div>
-    @using (Ajax.BeginForm("OnCellClick", "GameCenter", new AjaxOptions
-    {
-        HttpMethod = "POST",
-        InsertionMode = InsertionMode.Replace,
-        UpdateTargetId = "cells-wrapper"
-    }, new { id = "gameform" }))
-    {
-        @Html.AntiForgeryToken()
+@using (Ajax.BeginForm("OnCellClick", "GameCenter", new AjaxOptions
+{
+    HttpMethod = "POST",
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "cells-wrapper"
+}, new { id = "gameform" }))
+{
+    @Html.AntiForgeryToken()
 
-        for (int row = 0; row < Model.NumOfRows; row++)
+    for (int row = 0; row < Model.NumOfRows; row++)
+    {
+        for (int col = 0; col < Model.NumOfColumns; col++)
         {
-            for (int col = 0; col < Model.NumOfColumns; col++)
-            {
 
-                if (Model.Grid[col, row].Flagged)
+            if (Model.Grid[col, row].Flagged)
+            {
+                <input type="submit" class="cell cell-not-visited flagged" name="cellLocation" value="@(col + " " + row)"></input>
+            }
+            else if (Model.Grid[col, row].Visited == true)
+            {
+                if (Model.Grid[col, row].LiveNeighbors == 0)
                 {
-                    <input type="submit" class="cell cell-not-visited flagged" name="cellLocation" value="@(col + " " + row)"></input>
+                    <input disabled type="submit" class="cell cell-visited cell-visited-zero" name="cellLocation" value="@(col + " " + row)"></input>
                 }
-                else if (Model.Grid[col, row].Visited == true)
+                else if (Model.Grid[col, row].LiveNeighbors == 1)
                 {
-                    if (Model.Grid[col, row].LiveNeighbors == 0)
-                    {
-                        <input disabled type="submit" class="cell cell-visited cell-visited-zero" name="cellLocation" value="@(col + " " + row)"></input>
-                    }
-                    else if (Model.Grid[col, row].LiveNeighbors == 1)
-                    {
-                        <input disabled type="submit" class="cell cell-visited cell-visited-one" name="cellLocation" value="@(col + " " + row)"></input>
-                    }
-                    else if (Model.Grid[col, row].LiveNeighbors == 2)
-                    {
-                        <input disabled type="submit" class="cell cell-visited cell-visited-two" name="cellLocation" value="@(col + " " + row)"></input>
-                    }
-                    else if (Model.Grid[col, row].LiveNeighbors == 3)
-                    {
-                        <input disabled type="submit" class="cell cell-visited cell-visited-three" name="cellLocation" value="@(col + " " + row)"></input>
-                    }
-                    else if (Model.Grid[col, row].LiveNeighbors == 4)
-                    {
-                        <input disabled type="submit" class="cell cell-visited cell-visited-four" name="cellLocation" value="@(col + " " + row)"></input>
-                    }
-                    else if (Model.Grid[col, row].LiveNeighbors == 5)
-                    {
-                        <input disabled type="submit" class="cell cell-visited cell-visited-five" name="cellLocation" value="@(col + " " + row)"></input>
-                    }
-                    else if (Model.Grid[col, row].LiveNeighbors == 6)
-                    {
-                        <input disabled type="submit" class="cell cell-visited cell-visited-six" name="cellLocation" value="@(col + " " + row)"></input>
-                    }
-                    else if (Model.Grid[col, row].LiveNeighbors == 7)
-                    {
-                        <input disabled type="submit" class="cell cell-visited cell-visited-seven" name="cellLocation" value="@(col + " " + row)"></input>
-                    }
-                    else if (Model.Grid[col, row].LiveNeighbors == 8)
-                    {
-                        <input disabled type="submit" class="cell cell-visited cell-visited-eight" name="cellLocation" value="@(col + " " + row)"></input>
-                    }
-                    else if (Model.Grid[col, row].Detonated)
-                    {
-                        <input disabled type="submit" class="cell cell-visited cell-visited-detonated" name="cellLocation" value="@(col + " " + row)"></input>
-                    }
-                    else if (Model.Grid[col, row].Live)
-                    {
-                        <input disabled type="submit" class="cell cell-visited cell-visited-bomb" name="cellLocation" value="@(col + " " + row)"></input>
-                    }
+                    <input disabled type="submit" class="cell cell-visited cell-visited-one" name="cellLocation" value="@(col + " " + row)"></input>
                 }
-                else
+                else if (Model.Grid[col, row].LiveNeighbors == 2)
                 {
-                    <input type="submit" class="cell cell-not-visited" name="cellLocation" value="@(col + " " + row)"></input>
+                    <input disabled type="submit" class="cell cell-visited cell-visited-two" name="cellLocation" value="@(col + " " + row)"></input>
+                }
+                else if (Model.Grid[col, row].LiveNeighbors == 3)
+                {
+                    <input disabled type="submit" class="cell cell-visited cell-visited-three" name="cellLocation" value="@(col + " " + row)"></input>
+                }
+                else if (Model.Grid[col, row].LiveNeighbors == 4)
+                {
+                    <input disabled type="submit" class="cell cell-visited cell-visited-four" name="cellLocation" value="@(col + " " + row)"></input>
+                }
+                else if (Model.Grid[col, row].LiveNeighbors == 5)
+                {
+                    <input disabled type="submit" class="cell cell-visited cell-visited-five" name="cellLocation" value="@(col + " " + row)"></input>
+                }
+                else if (Model.Grid[col, row].LiveNeighbors == 6)
+                {
+                    <input disabled type="submit" class="cell cell-visited cell-visited-six" name="cellLocation" value="@(col + " " + row)"></input>
+                }
+                else if (Model.Grid[col, row].LiveNeighbors == 7)
+                {
+                    <input disabled type="submit" class="cell cell-visited cell-visited-seven" name="cellLocation" value="@(col + " " + row)"></input>
+                }
+                else if (Model.Grid[col, row].LiveNeighbors == 8)
+                {
+                    <input disabled type="submit" class="cell cell-visited cell-visited-eight" name="cellLocation" value="@(col + " " + row)"></input>
+                }
+                else if (Model.Grid[col, row].Detonated)
+                {
+                    <input disabled type="submit" class="cell cell-visited cell-visited-detonated" name="cellLocation" value="@(col + " " + row)"></input>
+                }
+                else if (Model.Grid[col, row].Live)
+                {
+                    <input disabled type="submit" class="cell cell-visited cell-visited-bomb" name="cellLocation" value="@(col + " " + row)"></input>
                 }
             }
-            <br />
+            else
+            {
+                <input type="submit" class="cell cell-not-visited" name="cellLocation" value="@(col + " " + row)"></input>
+            }
         }
+        <br />
     }
+}
+
+
+
+
+
+
+
 
 
 @if (Model.GameWon)

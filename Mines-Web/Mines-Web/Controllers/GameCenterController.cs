@@ -5,6 +5,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Diagnostics;
+using Mines_Web.Services.Business;
+using Mines_Web.Services.Data;
 
 namespace Mines_Web.Controllers
 {
@@ -12,6 +14,8 @@ namespace Mines_Web.Controllers
     {
         public static BoardModel board = new BoardModel(BoardModel.Difficulty.Beginner);
         public static BoardModel.Difficulty gameDifficulty = BoardModel.Difficulty.Beginner;
+
+        GameService gameService = new GameService();
         
         // GET: GameCenter
         public ActionResult Index()
@@ -100,6 +104,15 @@ namespace Mines_Web.Controllers
             int row = int.Parse(coordinates[1]);
             board.Grid[col, row].Flagged = !board.Grid[col, row].Flagged;
             return View("GameCenter");
+        }
+
+        [HttpPost]
+        public void SaveGame()
+        {
+            string gameString = "test game string";
+            GameObject gameObject = new GameObject(gameString);
+            gameService.SaveGame(gameObject);
+
         }
     }
 }
