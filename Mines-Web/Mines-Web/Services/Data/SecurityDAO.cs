@@ -55,11 +55,12 @@ namespace Mines_Web.Services.Data
                     }
                     catch (SqlException ex)
                     {
-                        Console.Error.WriteLine("{0}: {1}\n{2}", ex.Number, ex.Message, ex.Errors);
+                        
+                        Debug.WriteLine("Exception: {0}: {1}\n{2}", ex.Number, ex.Message, ex.Errors);
                     }
                     catch (Exception ex)
                     {
-                        Console.Error.WriteLine(ex.Message);
+                        Debug.WriteLine("Exception: {0}" + ex.Message);
                     }
                 }
             }
@@ -96,11 +97,11 @@ namespace Mines_Web.Services.Data
                     }
                     catch (SqlException ex)
                     {
-                        Console.Error.WriteLine("SQL Exception: " + ex.Message);
+                        Debug.WriteLine("Exception: {0}: {1}\n{2}", ex.Number, ex.Message, ex.Errors);
                     }
                     catch (Exception ex)
                     {
-                        Console.Error.WriteLine("Exception:" + ex.Message);
+                        Debug.WriteLine("Exception: {0}" + ex.Message);
                     }
                     return false;
                 }

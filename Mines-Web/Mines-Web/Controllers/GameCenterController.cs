@@ -5,6 +5,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Diagnostics;
+using Mines_Web.Services.Business;
+using Mines_Web.Services.Data;
 
 namespace Mines_Web.Controllers
 {
@@ -12,6 +14,8 @@ namespace Mines_Web.Controllers
     {
         public static BoardModel board = new BoardModel(BoardModel.Difficulty.Beginner);
         public static BoardModel.Difficulty gameDifficulty = BoardModel.Difficulty.Beginner;
+
+        GameService gameService = new GameService();
         
         // GET: GameCenter
         public ActionResult Index()
@@ -50,6 +54,10 @@ namespace Mines_Web.Controllers
             int col = int.Parse(coordinates[0]);
             int row = int.Parse(coordinates[1]);
 
+            if(board.VisitedSpaces == 0)
+            {
+                board.StartClock(); 
+            }
 
             //check that cell is not flagged, and not already visited
             if (!board.Grid[col, row].Flagged && !board.Grid[col, row].Visited)
@@ -64,6 +72,8 @@ namespace Mines_Web.Controllers
                 // if the cell is not a bomb, check if you won
                 else if ((board.NumOfRows * board.NumOfColumns) - (board.VisitedSpaces + 1) <= board.Mines)
                 {
+                    board.StopClock();
+                    UserModel user = (UserModel)Session["user"];
                     board.Grid[col, row].Visited = true;
                     board.VisitedSpaces++;
                     board.GameWon = true;
@@ -95,6 +105,16 @@ namespace Mines_Web.Controllers
             int row = int.Parse(coordinates[1]);
             board.Grid[col, row].Flagged = !board.Grid[col, row].Flagged;
             return View("GameCenter");
+        }
+
+        [HttpPost]
+        public void SaveGame()
+        {
+            UserModel user = (UserModel)Session["user"];
+            string gameString = "test game string";
+            GameObject gameObject = new GameObject(gameString);
+            gameService.SaveGame(gameObject);
+
         }
     }
 }

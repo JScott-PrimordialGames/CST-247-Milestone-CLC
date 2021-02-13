@@ -135,9 +135,12 @@
     <Compile Include="Models\StateModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Business\GameService.cs" />
     <Compile Include="Services\Business\SecurityService.cs" />
     <Compile Include="Services\Business\StatesService.cs" />
     <Compile Include="Services\Business\UserService.cs" />
+    <Compile Include="Models\GameObject.cs" />
+    <Compile Include="Services\Data\GamesDAO.cs" />
     <Compile Include="Services\Data\SecurityDAO.cs" />
     <Compile Include="Services\Data\StatesDAO.cs" />
     <Compile Include="Services\Data\UserDAO.cs" />

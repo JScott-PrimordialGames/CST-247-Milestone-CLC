@@ -5,6 +5,7 @@ using System.Web;
 using Mines_Web.Models;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace Mines_Web.Services.Data
 {
@@ -42,13 +43,11 @@ namespace Mines_Web.Services.Data
                     }
                     catch (SqlException ex)
                     {
-                        Console.Out.WriteLine("Exception:");
-                        Console.Error.WriteLine(ex.Message);
+                        Debug.WriteLine("Exception: {0}: {1}\n{2}", ex.Number, ex.Message, ex.Errors);
                     }
                     catch (Exception ex)
                     {
-                        Console.Out.WriteLine("Exception:");
-                        Console.Error.WriteLine(ex.Message);
+                        Console.Error.WriteLine("Exception: {0}", ex.Message);
                     }
                 }
             }

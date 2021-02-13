@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Diagnostics;
+
 
 namespace Mines_Web.Models
 {
@@ -12,8 +14,9 @@ namespace Mines_Web.Models
         public int Mines { get; private set; }
         public CellModel[,] Grid { get; set; }
         public int VisitedSpaces { get; set; } = 0;
-        public bool GameWon{ get; set; } = false;
+        public bool GameWon { get; set; } = false;
 
+        public Stopwatch gameClock { get; private set; }
 
         public enum Difficulty : int
         {
@@ -47,7 +50,8 @@ namespace Mines_Web.Models
 
         public BoardModel(BoardModel.Difficulty difficulty)
         {
-            if(difficulty == BoardModel.Difficulty.Beginner)
+            gameClock = new Stopwatch();
+            if (difficulty == BoardModel.Difficulty.Beginner)
             {
                 NumOfRows = (int)BoardModel.BeginnerSetup.Rows;
                 NumOfColumns = (int)BoardModel.BeginnerSetup.Columns;
@@ -163,6 +167,21 @@ namespace Mines_Web.Models
                     Grid[col, row].Visited = true;
                 }
             }
+        }
+
+        public void StartClock()
+        {  
+            gameClock.Start();
+        }
+
+        public void StopClock()
+        {
+            gameClock.Stop();
+        }
+
+        public string GetPlayTime()
+        {
+            return gameClock.Elapsed.Seconds.ToString();
         }
     }
 }
