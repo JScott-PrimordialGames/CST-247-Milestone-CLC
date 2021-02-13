@@ -73,6 +73,7 @@ namespace Mines_Web.Controllers
                 else if ((board.NumOfRows * board.NumOfColumns) - (board.VisitedSpaces + 1) <= board.Mines)
                 {
                     board.StopClock();
+                    UserModel user = (UserModel)Session["user"];
                     board.Grid[col, row].Visited = true;
                     board.VisitedSpaces++;
                     board.GameWon = true;
@@ -109,6 +110,7 @@ namespace Mines_Web.Controllers
         [HttpPost]
         public void SaveGame()
         {
+            UserModel user = (UserModel)Session["user"];
             string gameString = "test game string";
             GameObject gameObject = new GameObject(gameString);
             gameService.SaveGame(gameObject);

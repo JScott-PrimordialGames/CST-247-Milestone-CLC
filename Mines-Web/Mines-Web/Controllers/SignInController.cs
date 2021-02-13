@@ -37,10 +37,12 @@ namespace Mines_Web.Controllers
                 UserModel user = securityService.Authenticate(model);
                 if (user.Username != null)
                 {
+                    Session["user"] = user;
                     return RedirectToAction("Index", "GameCenter");
                 }
                 else
                 {
+                    Session.Clear();
                     ModelState.AddModelError("name", "The username or password supplied is not valid. Please try again");
                     return View("SignInForm");
                 }
