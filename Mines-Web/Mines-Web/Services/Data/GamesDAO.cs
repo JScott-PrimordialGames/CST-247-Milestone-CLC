@@ -34,6 +34,7 @@ namespace Mines_Web.Services.Data
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@GameString", boardJsonString);
                     cmd.Parameters.AddWithValue("@userId", userID);
+                    cmd.Parameters.AddWithValue("@DateCreated", DateTime.Now);
                     cmd.Parameters.Add(isSuccessful);
 
                     try
@@ -107,9 +108,9 @@ namespace Mines_Web.Services.Data
             return boardJsonString;
         }
 
-        public List<int> GetThreeSavedGamesByUserID(int userID)
+        public List<GameObject> GetThreeSavedGamesByUserID(int userID)
         {
-            List<int> gamesList = new List<int>();
+            List<GameObject> gamesList = new List<GameObject>();
 
             using (SqlConnection conn = new SqlConnection(connectionStr))
             {
@@ -127,7 +128,10 @@ namespace Mines_Web.Services.Data
 
                         while (reader.Read())
                         {
-                            gamesList.Add(reader.GetInt32(0));
+                            GameObject gameObject = new GameObject();
+                            gameObject.Id = Convert.ToInt32(reader["id"].ToString());
+                            gameObject.DateCreated = reader["DateCreated"].ToString();
+                            gamesList.Add(gameObject);
                         }
 
                         reader.Close();

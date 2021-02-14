@@ -94,5 +94,63 @@ namespace MinesAPI
                     
             }
         }
+
+        public GameResultsDTO GetGameResultsForUserAndGameDifficulty(string id, string difficulty)
+        {
+            int userId = 0;
+            int difficultyLevel = 0;
+            Int32.TryParse(id, out userId);
+
+            if (!difficulty.ToLower().Equals("beginner") && !difficulty.ToLower().Equals("intermediate") && !difficulty.ToLower().Equals("expert")
+                     && !difficulty.ToLower().Equals("1") && !difficulty.ToLower().Equals("2") && !difficulty.ToLower().Equals("3"))
+            {
+                GameResultsDTO gameResultsDTO = new GameResultsDTO();
+                gameResultsDTO.ErrorCode = 400;
+                gameResultsDTO.ErrorMessage = "Bad Request: The difficulty level {0} does not exist sent is not valid. Please enter one of the following:" +
+                    "\"beginner\", \"intermediate\", \"expert\", \"1\", \"2\", \"3\".";
+                return gameResultsDTO;
+            }
+            
+            if(difficulty.ToLower().Equals("beginner") || difficulty.Equals("1"))
+            {
+                difficultyLevel = 1;
+            } 
+            else if(difficulty.ToLower().Equals("intermediate") || difficulty.Equals("2"))
+            {
+                difficultyLevel = 2;
+            }
+            else if (difficulty.ToLower().Equals("expert") || difficulty.Equals("3"))
+            {
+                difficultyLevel = 3;
+            }
+
+            if (userId <= 0)
+            {
+                GameResultsDTO gameResultsDTO = new GameResultsDTO();
+                gameResultsDTO.ErrorCode = 400;
+                gameResultsDTO.ErrorMessage = "Bad Request: The user id sent is not valid";
+                return gameResultsDTO;
+            }
+            else
+            {
+                GameResultsBusinessService service = new GameResultsBusinessService();
+                if (service.UserExists(userId))
+                {
+                    GameResultsDTO gameResultsDTO = new GameResultsDTO();
+                    gameResultsDTO.ErrorCode = 0;
+                    gameResultsDTO.ErrorMessage = "OK";
+                    gameResultsDTO.GameResults = service.GetGameResultsForUserAndGameDifficulty(userId, difficultyLevel);
+                    return gameResultsDTO;
+                }
+                else
+                {
+                    GameResultsDTO gameResultsDTO = new GameResultsDTO();
+                    gameResultsDTO.ErrorCode = 404;
+                    gameResultsDTO.ErrorMessage = "Not Found: There are no resources for the user with id: " + userId.ToString() + ".";
+                    return gameResultsDTO;
+                }
+
+            }
+        }
     }
 }
