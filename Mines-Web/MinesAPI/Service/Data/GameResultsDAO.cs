@@ -18,6 +18,7 @@ namespace MinesAPI.Service.Data
         string spGetGameScoresForUser = "[dbo].[SP_GetGameResultsForUser]";
         string spDoesUserExist = "[dbo].[SP_DoesUserExist]";
         string spGetGameResultsForUserAndGameDifficulty = "[dbo].[SP_GetGameResultsForUserAndGameDifficulty]";
+        string spGetAllGameScoresForDifficulty = "[dbo].[SP_GetGameScoresForDifficulty]";
 
         public List<GameResultsModel> GetAllUsers(int limit = 0)
         {
@@ -222,6 +223,63 @@ namespace MinesAPI.Service.Data
                             }
 
                             allScores.Add(gameResults);
+                        }
+
+                        reader.Close();
+                        conn.Close();
+                    }
+                    catch (SqlException ex)
+                    {
+                        Console.Out.WriteLine("Exception:");
+                        Debug.WriteLine("Exception: {0}" + ex.Message);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.Out.WriteLine("Exception:");
+                        Debug.WriteLine("Exception: {0}" + ex.Message);
+                    }
+                }
+            }
+
+            return allScores;
+        }
+
+
+        public List<GameResultsModel> GetGameResultsForDifficutly(int limit, int difficulty)
+        {
+            List<GameResultsModel> allScores = new List<GameResultsModel>();
+
+            using (SqlConnection conn = new SqlConnection(connectionStr))
+            {
+                using (SqlCommand cmd = new SqlCommand(spGetAllGameScoresForDifficulty, conn))
+                {
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@RowsToReturn", limit);
+                    cmd.Parameters.AddWithValue("@Difficulty", difficulty);
+
+                    try
+                    {
+                        conn.Open();
+
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                GameResultsModel gameResult = new GameResultsModel();
+                                gameResult.UserId = Convert.ToInt32(reader["USERID"]);
+                                gameResult.UserName = reader["USERNAME"].ToString();
+
+                                GameScoresModel score = new GameScoresModel();
+                                score.Score = float.Parse(reader["SCORE"].ToString());
+                                score.Difficulty = reader["DIFFICULTY"].ToString();
+
+                                gameResult.GameScores = new List<GameScoresModel>();
+                                gameResult.GameScores.Add(score);
+
+                                allScores.Add(gameResult);
+                            }
                         }
 
                         reader.Close();

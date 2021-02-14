@@ -30,5 +30,10 @@ namespace MinesAPI.Service.Business
         {
             return gameResultsDAO.GetGameResultsByUserAndGameDifficulty(userId, difficulty);
         }
+
+        public List<GameResultsModel> GetGameResultsForDifficulty(int limit, int difficulty)
+        {
+            return gameResultsDAO.GetGameResultsForDifficutly(limit, difficulty);
+        }
     }
 }

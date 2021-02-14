@@ -24,5 +24,9 @@ namespace MinesAPI
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json, UriTemplate = "GetGameResultsForUser/{id}/GameDifficulty/{difficulty}")]
         GameResultsDTO GetGameResultsForUserAndGameDifficulty(string id, string difficulty);
+
+        [OperationContract]
+        [WebGet(ResponseFormat = WebMessageFormat.Json, UriTemplate = "GetGameResults/{limit}/GameDifficulty/{difficulty}")]
+        GameResultsDTO GetGameResultsForGameDifficulty(string limit, string difficulty);
     }
 }

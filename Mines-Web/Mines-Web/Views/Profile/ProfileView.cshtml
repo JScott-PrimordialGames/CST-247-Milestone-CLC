@@ -2,79 +2,95 @@
 
 @{
     ViewBag.Title = "ProfileView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>ProfileView</h2>
+<link href="~/Content/Custom-CSS/style_Profile.css" rel="stylesheet" />
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-<div class="form-horizontal">
-    <h3>Profile</h3>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<h2>My Profile</h2>
 
-    <div class="form-inline">
-        <div class="form-group">
-            <h5>Username:</h5>
-            <div class="col-md-10">
-                @Html.LabelFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+<!--Begin Profile page-->
 
-            </div>
-        </div>
-        <div class="form-group">
-            <h5>Email:</h5>
-            <div class="col-md-10">
-                @Html.LabelFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-            </div>
+
+<div class="wrapper">
+    <div class="form-container">
+        <div class="profile-view">
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-inline">
+                    <div class="form-group">
+                        <h5>Username:</h5>
+                        <div class="col-md-10">
+                            @Html.LabelFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h5>Email:</h5>
+                        <div class="col-md-10">
+                            @Html.LabelFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h5>Email:</h5>
+                    <div class="col-md-10">
+                        @Html.LabelFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+
+
+                <div class="form-inline">
+                    <div class="form-group">
+                        <h5>First Name:</h5>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <h5>Last Name:</h5>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-inline">
+                    <div class="form-group">
+                        <h5>Gender:</h5>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Gender, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <h5>Age:</h5>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-default" />
+                    </div>
+                </div>
+
+                <div>
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            }
+
         </div>
     </div>
+</div>
 
-    <div class="form-inline">
-        <div class="form-group">
-            <h5>First Name:</h5>
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <h5>Last Name:</h5>
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
-            </div>
-        </div>
-    </div>
-
-    <div class="form-inline">
-        <div class="form-group">
-            <h5>Gender:</h5>
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Gender, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <h5>Age:</h5>
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
-            </div>
-        </div>
-    </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
- </div>
- }
-
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
