@@ -5,3 +5,10 @@ C:\Users\donal\source\repos\CST-247-Milestone-CLC\Mines-Web\MinesAPI\obj\Debug\M
 C:\Users\donal\source\repos\CST-247-Milestone-CLC\Mines-Web\MinesAPI\obj\Debug\MinesAPI.csproj.CoreCompileInputs.cache
 C:\Users\donal\source\repos\CST-247-Milestone-CLC\Mines-Web\MinesAPI\obj\Debug\MinesAPI.dll
 C:\Users\donal\source\repos\CST-247-Milestone-CLC\Mines-Web\MinesAPI\obj\Debug\MinesAPI.pdb
+C:\Users\bryke\source\repos\CST-247-Milestone-CLC\Mines-Web\MinesAPI\bin\MinesAPI.dll.config
+C:\Users\bryke\source\repos\CST-247-Milestone-CLC\Mines-Web\MinesAPI\bin\MinesAPI.dll
+C:\Users\bryke\source\repos\CST-247-Milestone-CLC\Mines-Web\MinesAPI\bin\MinesAPI.pdb
+C:\Users\bryke\source\repos\CST-247-Milestone-CLC\Mines-Web\MinesAPI\obj\Debug\MinesAPI.csproj.CoreCompileInputs.cache
+C:\Users\bryke\source\repos\CST-247-Milestone-CLC\Mines-Web\MinesAPI\obj\Debug\MinesAPI.dll
+C:\Users\bryke\source\repos\CST-247-Milestone-CLC\Mines-Web\MinesAPI\obj\Debug\MinesAPI.pdb
+C:\Users\bryke\source\repos\CST-247-Milestone-CLC\Mines-Web\MinesAPI\obj\Debug\MinesAPI.csprojAssemblyReference.cache

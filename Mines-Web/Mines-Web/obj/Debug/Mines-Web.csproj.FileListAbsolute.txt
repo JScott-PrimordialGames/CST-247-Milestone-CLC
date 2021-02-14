@@ -418,7 +418,6 @@ C:\Users\bryke\source\repos\CST-247-Milestone-CLC\Mines-Web\Mines-Web\bin\System
 C:\Users\bryke\source\repos\CST-247-Milestone-CLC\Mines-Web\Mines-Web\bin\Newtonsoft.Json.xml
 C:\Users\bryke\source\repos\CST-247-Milestone-CLC\Mines-Web\Mines-Web\bin\Antlr3.Runtime.pdb
 C:\Users\bryke\source\repos\CST-247-Milestone-CLC\Mines-Web\Mines-Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\bryke\source\repos\CST-247-Milestone-CLC\Mines-Web\Mines-Web\obj\Debug\Mines-Web.csprojAssemblyReference.cache
 C:\Users\bryke\source\repos\CST-247-Milestone-CLC\Mines-Web\Mines-Web\obj\Debug\Mines-Web.csproj.CoreCompileInputs.cache
 C:\Users\bryke\source\repos\CST-247-Milestone-CLC\Mines-Web\Mines-Web\obj\Debug\Mines-Web.csproj.CopyComplete
 C:\Users\bryke\source\repos\CST-247-Milestone-CLC\Mines-Web\Mines-Web\obj\Debug\Mines-Web.dll
@@ -630,3 +629,4 @@ C:\Users\donal\Source\Repos\CST-247-Milestone-CLC\Mines-Web\Mines-Web\obj\Debug\
 C:\Users\donal\Source\Repos\CST-247-Milestone-CLC\Mines-Web\Mines-Web\obj\Debug\Mines-Web.csproj.CopyComplete
 C:\Users\donal\Source\Repos\CST-247-Milestone-CLC\Mines-Web\Mines-Web\obj\Debug\Mines-Web.dll
 C:\Users\donal\Source\Repos\CST-247-Milestone-CLC\Mines-Web\Mines-Web\obj\Debug\Mines-Web.pdb
+C:\Users\bryke\source\repos\CST-247-Milestone-CLC\Mines-Web\Mines-Web\obj\Debug\Mines-Web.csprojAssemblyReference.cache

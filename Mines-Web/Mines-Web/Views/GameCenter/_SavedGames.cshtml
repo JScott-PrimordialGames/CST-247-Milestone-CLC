@@ -1,16 +1,15 @@
-﻿@model List<int>
+﻿@model List<Mines_Web.Models.GameObject>
 
-
-
-    @foreach (var item in Model)
+    @for (int i = 0; i < Model.Count; i++)
     {
         <div class="saved-game-box">
-            <p>game: @item  </p>
+            <p>DateCreated: @Model[i].DateCreated   </p>
+            <p>ID: @Model[i].Id  </p>
             @Html.ActionLink(
                  "Load",
                  "LoadGame",
                  "GameCenter",
-                 new { gameID = item },
+                 new { gameID = Model[i].Id },
                  null
              )
         </div>

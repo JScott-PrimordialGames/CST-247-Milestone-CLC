@@ -27,7 +27,7 @@ namespace Mines_Web.Services.Business
             
         }
 
-        public List<int> GetThreeSavedGamesByUserID(int userID)
+        public List<GameObject> GetThreeSavedGamesByUserID(int userID)
         {
             return service.GetThreeSavedGamesByUserID(userID);
         }
