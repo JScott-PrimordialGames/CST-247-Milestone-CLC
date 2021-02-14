@@ -17,6 +17,7 @@ namespace MinesAPI.Service.Data
         string spGetAllGameScores = "[dbo].[SP_GetAllGameScores]";
         string spGetGameScoresForUser = "[dbo].[SP_GetGameResultsForUser]";
         string spDoesUserExist = "[dbo].[SP_DoesUserExist]";
+        string spGetGameResultsForUserAndGameDifficulty = "[dbo].[SP_GetGameResultsForUserAndGameDifficulty]";
 
         public List<GameResultsModel> GetAllUsers(int limit = 0)
         {
@@ -178,6 +179,69 @@ namespace MinesAPI.Service.Data
             }
         }
 
+        public List<GameResultsModel> GetGameResultsByUserAndGameDifficulty(int userId, int difficulty)
+        {
+            List<GameResultsModel> allScores = new List<GameResultsModel>();
+
+            using (SqlConnection conn = new SqlConnection(connectionStr))
+            {
+                using (SqlCommand cmd = new SqlCommand(spGetGameResultsForUserAndGameDifficulty, conn))
+                {
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@UserId", userId);
+                    cmd.Parameters.AddWithValue("@Difficulty", difficulty);
+
+                    try
+                    {
+                        conn.Open();
+
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        if (reader.HasRows)
+                        {
+                            reader.Read();
+
+                            GameResultsModel gameResults = new GameResultsModel();
+                            gameResults.UserId = Convert.ToInt32(reader["USERID"].ToString());
+                            gameResults.UserName = reader["USERNAME"].ToString();
+
+                            GameScoresModel gameScore = new GameScoresModel();
+                            gameScore.Difficulty = reader["DIFFICULTY"].ToString();
+                            gameScore.Score = float.Parse(reader["SCORE"].ToString());
+
+                            gameResults.GameScores = new List<GameScoresModel>();
+                            gameResults.GameScores.Add(gameScore);
+
+                            while (reader.Read())
+                            {
+                                gameScore = new GameScoresModel();
+                                gameScore.Difficulty = reader["DIFFICULTY"].ToString();
+                                gameScore.Score = float.Parse(reader["SCORE"].ToString());
+
+                                gameResults.GameScores.Add(gameScore);
+                            }
+
+                            allScores.Add(gameResults);
+                        }
+
+                        reader.Close();
+                        conn.Close();
+                    }
+                    catch (SqlException ex)
+                    {
+                        Console.Out.WriteLine("Exception:");
+                        Debug.WriteLine("Exception: {0}" + ex.Message);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.Out.WriteLine("Exception:");
+                        Debug.WriteLine("Exception: {0}" + ex.Message);
+                    }
+                }
+            }
+
+            return allScores;
+        }
 
     }
 }

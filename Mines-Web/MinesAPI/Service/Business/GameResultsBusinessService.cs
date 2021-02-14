@@ -25,5 +25,10 @@ namespace MinesAPI.Service.Business
         {
             return gameResultsDAO.DoesUserExist(userId);
         }
+
+        public List<GameResultsModel> GetGameResultsForUserAndGameDifficulty(int userId, int difficulty)
+        {
+            return gameResultsDAO.GetGameResultsByUserAndGameDifficulty(userId, difficulty);
+        }
     }
 }
