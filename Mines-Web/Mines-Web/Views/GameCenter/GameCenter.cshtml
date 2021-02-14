@@ -31,13 +31,6 @@
                 <input type="submit" class="submit-button" value="Save Game" style="font-size: 12px" />
             }
 
-            @using (Html.BeginForm("LoadGame", "GameCenter", FormMethod.Post))
-            {
-                @Html.AntiForgeryToken()
-
-                <input type="submit" class="submit-button" value="Load Game" style="font-size: 12px" />
-            }
-
 
             <div class="difficulty-selector-container">
                 @Html.Partial("_DifficultySelector")

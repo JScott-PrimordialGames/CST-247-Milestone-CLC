@@ -119,6 +119,7 @@ namespace Mines_Web.Controllers
         public ActionResult LoadGame(int gameID)
         {
             board = gameService.LoadGame(gameID);
+            board.StartClock();
 
             return View("GameCenter");
         }
@@ -126,7 +127,7 @@ namespace Mines_Web.Controllers
         public ActionResult LoadSavedGamesList()
         
         {
-            List<int> gamesList = gameService.GetThreeSavedGamesByUserID(((UserModel)Session["user"]).ID);
+            List<GameObject> gamesList = gameService.GetThreeSavedGamesByUserID(((UserModel)Session["user"]).ID);
 
             return PartialView("_SavedGames", gamesList);
         }
