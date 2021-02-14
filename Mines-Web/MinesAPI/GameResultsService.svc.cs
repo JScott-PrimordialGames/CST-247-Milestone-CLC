@@ -7,6 +7,7 @@ using System.ServiceModel.Web;
 using System.Text;
 using MinesAPI.DTOs;
 using MinesAPI.Models;
+using MinesAPI.Service.Business;
 
 namespace MinesAPI
 {
@@ -49,12 +50,16 @@ namespace MinesAPI
             model3.GameScores = scores3;
             gameResults.Add(model3);
         }
-        public GameResultsDTO GetAllGameResults()
+        public GameResultsDTO GetGameResults(string limit = "0")
         {
+            int limitInt = 0;
+            Int32.TryParse(limit, out limitInt);
+            GameResultsBusinessService service = new GameResultsBusinessService();
+            List<GameResultsModel> gameResultsList = service.GetGameResults(limitInt);
             GameResultsDTO gameResultsDTO = new GameResultsDTO();
             gameResultsDTO.ErrorCode = 0;
             gameResultsDTO.ErrorMessage = "OK";
-            gameResultsDTO.GameResults = gameResults;
+            gameResultsDTO.GameResults = gameResultsList;
             return gameResultsDTO;
         }
     }

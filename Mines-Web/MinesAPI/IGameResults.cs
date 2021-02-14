@@ -14,8 +14,8 @@ namespace MinesAPI
     public interface IGameResultsService
     {
         [OperationContract]
-        [WebGet(ResponseFormat = WebMessageFormat.Json, UriTemplate = "GetAllGameResults/")]
-        GameResultsDTO GetAllGameResults();
+        [WebGet(ResponseFormat = WebMessageFormat.Json, UriTemplate = "GetGameResults/{limit}")]
+        GameResultsDTO GetGameResults(string limit);
 
     }
 }
