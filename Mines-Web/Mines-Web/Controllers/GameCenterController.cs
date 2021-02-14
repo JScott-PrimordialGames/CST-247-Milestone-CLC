@@ -108,13 +108,27 @@ namespace Mines_Web.Controllers
         }
 
         [HttpPost]
-        public void SaveGame()
+        public ActionResult SaveGame()
         {
             UserModel user = (UserModel)Session["user"];
-            string gameString = "test game string";
-            GameObject gameObject = new GameObject(gameString);
-            gameService.SaveGame(gameObject);
+            gameService.SaveGame(user, board);
+            return View("GameCenter");
 
+        }
+
+        public ActionResult LoadGame(int gameID)
+        {
+            board = gameService.LoadGame(gameID);
+
+            return View("GameCenter");
+        }
+
+        public ActionResult LoadSavedGamesList()
+        
+        {
+            List<int> gamesList = gameService.GetThreeSavedGamesByUserID(((UserModel)Session["user"]).ID);
+
+            return PartialView("_SavedGames", gamesList);
         }
     }
 }

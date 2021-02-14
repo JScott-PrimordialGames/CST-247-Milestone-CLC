@@ -31,6 +31,13 @@
                 <input type="submit" class="submit-button" value="Save Game" style="font-size: 12px" />
             }
 
+            @using (Html.BeginForm("LoadGame", "GameCenter", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+
+                <input type="submit" class="submit-button" value="Load Game" style="font-size: 12px" />
+            }
+
 
             <div class="difficulty-selector-container">
                 @Html.Partial("_DifficultySelector")
@@ -42,6 +49,10 @@
     <section id="saved-games-section" class="game-center-section">
         <div id="saved-games-section-title" class="section-title">Saved Games</div>
         <div id="saved-games-content" class="section-content">
+
+            <div class="display-saved-games">
+                @Html.Action("LoadSavedGamesList", "GameCenter")
+            </div>
 
         </div>
     </section>
