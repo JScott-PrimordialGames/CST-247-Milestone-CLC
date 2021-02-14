@@ -17,5 +17,8 @@ namespace MinesAPI
         [WebGet(ResponseFormat = WebMessageFormat.Json, UriTemplate = "GetGameResults/{limit}")]
         GameResultsDTO GetGameResults(string limit);
 
+        [OperationContract]
+        [WebGet(ResponseFormat = WebMessageFormat.Json, UriTemplate = "GetGameResultsForUser/{id}")]
+        GameResultsDTO GetGameResultsForUser(string id);
     }
 }

@@ -62,5 +62,37 @@ namespace MinesAPI
             gameResultsDTO.GameResults = gameResultsList;
             return gameResultsDTO;
         }
+
+        public GameResultsDTO GetGameResultsForUser(string id)
+        {
+            int userId = 0;
+            Int32.TryParse(id, out userId);
+            if (userId <= 0)
+            {
+                GameResultsDTO gameResultsDTO = new GameResultsDTO();
+                gameResultsDTO.ErrorCode = 400;
+                gameResultsDTO.ErrorMessage = "Bad Request: The user id sent is not valid";
+                return gameResultsDTO;
+            }
+            else
+            {
+                GameResultsBusinessService service = new GameResultsBusinessService();
+                if (service.UserExists(userId))
+                {
+                    GameResultsDTO gameResultsDTO = new GameResultsDTO();
+                    gameResultsDTO.ErrorCode = 0;
+                    gameResultsDTO.ErrorMessage = "OK";
+                    gameResultsDTO.GameResults = service.GetGameResultsByUser(userId);
+                    return gameResultsDTO;
+                } else
+                {
+                    GameResultsDTO gameResultsDTO = new GameResultsDTO();
+                    gameResultsDTO.ErrorCode = 404;
+                    gameResultsDTO.ErrorMessage = "Not Found: There are no resources for the user with id: " + userId.ToString() + ".";
+                    return gameResultsDTO;
+                }
+                    
+            }
+        }
     }
 }

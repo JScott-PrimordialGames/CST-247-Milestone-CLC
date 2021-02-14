@@ -15,5 +15,15 @@ namespace MinesAPI.Service.Business
         {
             return gameResultsDAO.GetAllUsers(limit);
         }
+
+        public List<GameResultsModel> GetGameResultsByUser(int userId)
+        {
+            return gameResultsDAO.GetGameResultsByUser(userId);
+        }
+
+        public bool UserExists(int userId)
+        {
+            return gameResultsDAO.DoesUserExist(userId);
+        }
     }
 }
