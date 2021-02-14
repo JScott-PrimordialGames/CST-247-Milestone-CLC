@@ -1,0 +1,18 @@
+﻿@model List<int>
+
+
+
+    @foreach (var item in Model)
+    {
+        <div class="saved-game-box">
+            <p>game: @item  </p>
+            @Html.ActionLink(
+                 "Load",
+                 "LoadGame",
+                 "GameCenter",
+                 new { gameID = item },
+                 null
+             )
+        </div>
+    }
+
