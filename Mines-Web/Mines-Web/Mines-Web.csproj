@@ -216,6 +216,7 @@
     <Content Include="Views\GameCenter\_GameBoard.cshtml" />
     <Content Include="Views\GameCenter\_DifficultySelector.cshtml" />
     <Content Include="Views\GameCenter\_GameWon.cshtml" />
+    <Content Include="Views\GameCenter\_SavedGames.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
