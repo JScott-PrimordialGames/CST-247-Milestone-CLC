@@ -1,4 +1,4 @@
-/****** Object:  StoredProcedure [dbo].[SP_UpdateProfile]    Script Date: 1/14/2021 1:53:18 AM ******/
+/****** Object:  StoredProcedure [dbo].[SP_UpdateProfile]    Script Date: 2/14/2021 10:39:42 PM ******/
 SET ANSI_NULLS ON
 GO
 

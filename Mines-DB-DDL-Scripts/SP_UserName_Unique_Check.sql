@@ -1,4 +1,4 @@
-/****** Object:  StoredProcedure [dbo].[SP_UserName_Unique_Check]    Script Date: 1/13/2021 1:42:44 AM ******/
+/****** Object:  StoredProcedure [dbo].[SP_UserName_Unique_Check]    Script Date: 2/14/2021 10:40:32 PM ******/
 SET ANSI_NULLS ON
 GO
 

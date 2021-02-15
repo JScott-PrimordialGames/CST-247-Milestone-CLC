@@ -1,4 +1,4 @@
-/****** Object:  StoredProcedure [dbo].[SP_GetAllUsers]    Script Date: 1/14/2021 1:50:20 AM ******/
+/****** Object:  StoredProcedure [dbo].[SP_GetAllUsers]    Script Date: 2/14/2021 10:34:27 PM ******/
 SET ANSI_NULLS ON
 GO
 

@@ -1,11 +1,12 @@
-/****** Object:  StoredProcedure [dbo].[SP_GetUser]    Script Date: 1/14/2021 2:02:07 AM ******/
+/****** Object:  StoredProcedure [dbo].[SP_GetUser]    Script Date: 2/14/2021 10:37:16 PM ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
 
-Create PROCEDURE [dbo].[SP_GetUser]
+
+CREATE PROCEDURE [dbo].[SP_GetUser]
 (
 	@Id int
 )

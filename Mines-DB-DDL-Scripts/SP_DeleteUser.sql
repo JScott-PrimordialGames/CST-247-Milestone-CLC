@@ -1,4 +1,4 @@
-/****** Object:  StoredProcedure [dbo].[SP_DeleteUser]    Script Date: 1/14/2021 12:04:04 AM ******/
+/****** Object:  StoredProcedure [dbo].[SP_DeleteUser]    Script Date: 2/14/2021 10:32:05 PM ******/
 SET ANSI_NULLS ON
 GO
 
