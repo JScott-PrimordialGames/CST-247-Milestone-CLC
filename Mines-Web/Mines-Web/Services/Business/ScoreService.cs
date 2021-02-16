@@ -11,10 +11,10 @@ namespace Mines_Web.Services.Business
     {
         ScoreDAO service = new ScoreDAO();
 
-        public bool AddScore(UserModel user, float score)
+        public bool AddScore(UserModel user, float score, int difficulty)
         {
             int userID = user.ID;
-            return service.AddScore(userID, score);
+            return service.AddScore(userID, score, difficulty);
         }
     }
 }

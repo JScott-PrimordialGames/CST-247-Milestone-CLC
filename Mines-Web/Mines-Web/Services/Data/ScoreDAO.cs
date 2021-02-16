@@ -17,7 +17,7 @@ namespace Mines_Web.Services.Data
         string spAddScore = "[DBO].[SP_AddScore]";
 
 
-        public bool AddScore(int userId, float score)
+        public bool AddScore(int userId, float score, int difficulty)
         {
             using (SqlConnection conn = new SqlConnection(connectionStr))
             {
@@ -28,6 +28,7 @@ namespace Mines_Web.Services.Data
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@UserId", userId);
                     cmd.Parameters.AddWithValue("@Score", score);
+                    cmd.Parameters.AddWithValue("@Difficulty", difficulty);
                     cmd.Parameters.Add(isInserted);
 
                     try

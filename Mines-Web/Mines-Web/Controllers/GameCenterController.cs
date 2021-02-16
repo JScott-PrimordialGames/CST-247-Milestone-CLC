@@ -16,6 +16,7 @@ namespace Mines_Web.Controllers
         public static BoardModel.Difficulty gameDifficulty = BoardModel.Difficulty.Beginner;
 
         GameService gameService = new GameService();
+        ScoreService scoreService = new ScoreService();
         
         // GET: GameCenter
         public ActionResult Index()
@@ -74,6 +75,11 @@ namespace Mines_Web.Controllers
                 {
                     board.StopClock();
                     UserModel user = (UserModel)Session["user"];
+                    float score = board.gameClock.ElapsedMilliseconds / 1000f;
+                    ViewBag.score = score;
+
+                    bool succeeded = scoreService.AddScore(user, score, (int)gameDifficulty + 1);
+
                     board.Grid[col, row].Visited = true;
                     board.VisitedSpaces++;
                     board.GameWon = true;
@@ -110,6 +116,7 @@ namespace Mines_Web.Controllers
         [HttpPost]
         public ActionResult SaveGame()
         {
+            board.StopClock();
             UserModel user = (UserModel)Session["user"];
             gameService.SaveGame(user, board);
             return View("GameCenter");
