@@ -13,14 +13,31 @@ namespace Mines_Web.Controllers
     public class GameCenterController : Controller
     {
         public static BoardModel board = new BoardModel(BoardModel.Difficulty.Beginner);
+        //public BoardModel board;
         public static BoardModel.Difficulty gameDifficulty = BoardModel.Difficulty.Beginner;
 
         GameService gameService = new GameService();
         ScoreService scoreService = new ScoreService();
         
+        [NonAction]
+        public void getBoard()
+        {
+            if (Session["board"] == null)
+            {
+                board = new BoardModel(BoardModel.Difficulty.Beginner);
+                Session["board"] = board;
+            }
+            else
+            {
+                board = (BoardModel)Session["board"];
+            }
+        }
+
         // GET: GameCenter
         public ActionResult Index()
         {
+            board = new BoardModel(BoardModel.Difficulty.Beginner);
+            Session["board"] = board;
             return View("GameCenter");
         }
 
@@ -75,10 +92,9 @@ namespace Mines_Web.Controllers
                 {
                     board.StopClock();
                     UserModel user = (UserModel)Session["user"];
-                    float score = board.gameClock.ElapsedMilliseconds / 1000f;
-                    ViewBag.score = score;
+                    ViewBag.score = board.GetScore();
 
-                    bool succeeded = scoreService.AddScore(user, score, (int)gameDifficulty + 1);
+                    bool succeeded = scoreService.AddScore(user, board.GetScore(), (int)gameDifficulty + 1);
 
                     board.Grid[col, row].Visited = true;
                     board.VisitedSpaces++;
@@ -116,9 +132,12 @@ namespace Mines_Web.Controllers
         [HttpPost]
         public ActionResult SaveGame()
         {
-            board.StopClock();
-            UserModel user = (UserModel)Session["user"];
-            gameService.SaveGame(user, board);
+            if (!board.isGameLost && !board.GameWon)
+            {
+                board.StopClock();
+                UserModel user = (UserModel)Session["user"];
+                gameService.SaveGame(user, board);
+            }
             return View("GameCenter");
 
         }
@@ -132,7 +151,6 @@ namespace Mines_Web.Controllers
         }
 
         public ActionResult LoadSavedGamesList()
-        
         {
             List<GameObject> gamesList = gameService.GetThreeSavedGamesByUserID(((UserModel)Session["user"]).ID);
 

@@ -1,4 +1,4 @@
-﻿
+﻿@model Mines_Web.Models.BoardModel
 @{
     ViewBag.Title = "GameCenter";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -20,23 +20,23 @@
             <div id="cells-wrapper">
 
                 @Html.Action("LoadGameBoard", "GameCenter")
-                <div class="save-game-form-container">
-                    @using (Html.BeginForm("SaveGame", "GameCenter", FormMethod.Post))
-                    {
-                        @Html.AntiForgeryToken()
 
-                        <input type="submit" class="submit-button" value="Save Game" style="font-size: 12px" />
-                    }
-                </div>
             </div>
 
 
             <div class="difficulty-selector-container">
+                <div class="save-game-form-container">
+                    @using (Html.BeginForm("SaveGame", "GameCenter", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        <input type="submit" class="submit-button" value="Save Game" style="font-size: 12px" />
+                     }
+                </div>
                 @Html.Partial("_DifficultySelector")
             </div>
 
         </div>
-</section>
+    </section>
 
     <section id="saved-games-section" class="game-center-section">
         <div id="saved-games-section-title" class="section-title">Saved Games</div>

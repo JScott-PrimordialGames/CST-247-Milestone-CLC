@@ -9,14 +9,19 @@ namespace Mines_Web.Models
 {
     public class BoardModel
     {
-        public int NumOfColumns { get; private set; }
-        public int NumOfRows { get; private set; }
-        public int Mines { get; private set; }
+        public int NumOfColumns { get; set; }
+        public int NumOfRows { get; set; }
+        public int Mines { get; set; }
         public CellModel[,] Grid { get; set; }
         public int VisitedSpaces { get; set; } = 0;
         public bool GameWon { get; set; } = false;
 
-        public Stopwatch gameClock { get; private set; }
+        public bool isGameLost { get; set; } = false;
+
+        public long Score { get; set; } = 0;
+
+
+        public Stopwatch gameClock { get;  set; }
 
         public enum Difficulty : int
         {
@@ -160,6 +165,7 @@ namespace Mines_Web.Models
 
         public void GameLost()
         {
+            isGameLost = true;
             for(int row = 0; row < NumOfRows; row++)
             {
                 for(int col = 0; col < NumOfColumns; col++)
@@ -177,11 +183,19 @@ namespace Mines_Web.Models
         public void StopClock()
         {
             gameClock.Stop();
+            this.Score += gameClock.ElapsedMilliseconds;
+            gameClock = new Stopwatch();
         }
 
         public string GetPlayTime()
         {
-            return gameClock.Elapsed.Seconds.ToString();
+            return ((int)(this.Score + gameClock.ElapsedMilliseconds) / 1000).ToString();
+        }
+
+        public float GetScore()
+        {
+            return ((float)this.Score)/1000f;
+
         }
     }
 }
