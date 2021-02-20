@@ -2,7 +2,9 @@
 
 
 <script>
-    
+    $(document).contextmenu(function () {
+        return false;
+    });
 
     $(document).ready(function () {
         $(".cell-not-visited").mousedown(function (e) {
