@@ -7,14 +7,24 @@ using System.Web.Mvc;
 using System.Diagnostics;
 using Mines_Web.Services.Business;
 using Mines_Web.Services.Data;
+using Mines_Web.Services.Utility;
 
 namespace Mines_Web.Controllers
 {
+    [CustomAuthorization]
     public class GameCenterController : Controller
     {
+        private readonly ILogger logger;
+
         public static BoardModel board = new BoardModel(BoardModel.Difficulty.Beginner);
         //public BoardModel board;
         public static BoardModel.Difficulty gameDifficulty = BoardModel.Difficulty.Beginner;
+
+        public GameCenterController(ILogger logger)
+        {
+            this.logger = logger;
+        }
+
 
         GameService gameService = new GameService();
         ScoreService scoreService = new ScoreService();
@@ -33,7 +43,7 @@ namespace Mines_Web.Controllers
             }
         }
 
-        [CustomAuthorization]
+
         // GET: GameCenter
         public ActionResult Index()
         {
@@ -95,6 +105,7 @@ namespace Mines_Web.Controllers
                     UserModel user = (UserModel)Session["user"];
                     ViewBag.score = board.GetScore();
 
+                    logger.Info("Initiating saving game result for user {" + ((UserModel)Session["user"]).Username + "}");
                     bool succeeded = scoreService.AddScore(user, board.GetScore(), (int)gameDifficulty + 1);
 
                     board.Grid[col, row].Visited = true;
@@ -133,6 +144,8 @@ namespace Mines_Web.Controllers
         [HttpPost]
         public ActionResult SaveGame()
         {
+            logger.Info("Initiating game save for user {" + ((UserModel)Session["user"]).Username + "}");
+
             if (!board.isGameLost && !board.GameWon)
             {
                 board.StopClock();
@@ -145,6 +158,7 @@ namespace Mines_Web.Controllers
 
         public ActionResult LoadGame(int gameID)
         {
+            logger.Info("Attempting to load game {" + gameID + "} for user {" + ((UserModel)Session["user"]).Username + "}");
             board = gameService.LoadGame(gameID);
             board.StartClock();
 
@@ -153,6 +167,7 @@ namespace Mines_Web.Controllers
 
         public ActionResult LoadSavedGamesList()
         {
+            logger.Info("Initiating action to load the game list for user {" + ((UserModel)Session["user"]).Username + "}");
             List<GameObject> gamesList = gameService.GetThreeSavedGamesByUserID(((UserModel)Session["user"]).ID);
 
             return PartialView("_SavedGames", gamesList);

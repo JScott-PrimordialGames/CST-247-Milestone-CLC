@@ -4,11 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Mines_Web.Services.Utility;
 
 namespace Mines_Web.Services.Business
 {
     public class SecurityService
     {
+
         SecurityDAO service = new SecurityDAO();
 
         public UserModel Authenticate(PrincipalModel principal)

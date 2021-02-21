@@ -7,12 +7,14 @@ using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Configuration;
+using Mines_Web.Services.Utility;
 
 
 namespace Mines_Web.Services.Data
 {
     public class SecurityDAO
     {
+
         //Configuration string from web.config
         string connectionStr = ConfigurationManager.ConnectionStrings["MinesApp"].ConnectionString;
 
@@ -52,10 +54,10 @@ namespace Mines_Web.Services.Data
 
                         reader.Close();
                         conn.Close();
+
                     }
                     catch (SqlException ex)
                     {
-                        
                         Debug.WriteLine("Exception: {0}: {1}\n{2}", ex.Number, ex.Message, ex.Errors);
                     }
                     catch (Exception ex)
@@ -87,7 +89,9 @@ namespace Mines_Web.Services.Data
                         cmd.ExecuteNonQuery();
                         conn.Close();
 
-                        if(Convert.ToInt32(isSuccessful) == 1)
+
+
+                        if (Convert.ToInt32(isSuccessful) == 1)
                         {
                             return true;
                         } else
