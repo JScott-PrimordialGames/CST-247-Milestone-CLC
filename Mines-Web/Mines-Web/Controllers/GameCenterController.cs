@@ -18,7 +18,7 @@ namespace Mines_Web.Controllers
 
         GameService gameService = new GameService();
         ScoreService scoreService = new ScoreService();
-        
+
         [NonAction]
         public void getBoard()
         {
@@ -33,6 +33,7 @@ namespace Mines_Web.Controllers
             }
         }
 
+        [CustomAuthorization]
         // GET: GameCenter
         public ActionResult Index()
         {

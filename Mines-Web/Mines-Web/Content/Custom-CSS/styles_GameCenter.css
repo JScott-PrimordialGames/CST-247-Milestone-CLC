@@ -1,10 +1,22 @@
 ﻿
+
+
+
 .game-center-section {
     margin: 0 10px;
     width: 100%;
 }
 
 .game-center-content {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.saved-games-content {
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +24,7 @@
 }
 
 #game-board-section{
-    width: fit-content;
+    width: auto;
 }
 
 .section-content {
