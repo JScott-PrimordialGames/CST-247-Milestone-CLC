@@ -3,15 +3,19 @@
     @for (int i = 0; i < Model.Count; i++)
     {
         <div class="saved-game-box">
-            <p>DateCreated: @Model[i].DateCreated   </p>
-            <p>ID: @Model[i].Id  </p>
-            @Html.ActionLink(
-                 "Load",
-                 "LoadGame",
-                 "GameCenter",
-                 new { gameID = Model[i].Id },
-                 null
-             )
+            <div class="saved-game-title saved-game-row"> @Model[i].DateCreated </div>
+            <div class="saved-game-id saved-game-row">ID: @Model[i].Id</div>
+            <div class="load-game-button saved-game-row">
+                @Html.ActionLink(
+                    "Continue",
+                    "LoadGame",
+                    "GameCenter",
+                    new { gameID = Model[i].Id },
+                    null
+                )
+            </div>
+
+    
         </div>
     }
 

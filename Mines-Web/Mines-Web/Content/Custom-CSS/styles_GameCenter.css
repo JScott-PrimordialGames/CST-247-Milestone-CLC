@@ -13,14 +13,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-}
-
-.saved-games-content {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    position: relative;
 }
 
 #game-board-section{
@@ -201,4 +194,94 @@ div, input{
     border: 3px solid black;
     z-index: 100;
     font-size: 30px;
+}
+
+
+#saved-games-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+#saved-games-section-title {
+    width: 100%;
+    text-align: center;
+}
+
+
+#saved-games-content{
+    padding: 15px;
+}
+
+.display-saved-games {
+    display: flex;
+    flex-direction: column;
+}
+
+.saved-game-box {
+    margin: 10px 0;
+    color: #666666;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 0 5px;
+    width: 250px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient( to bottom right, rgba(231, 57, 245, 0.8), rgba(97, 217, 222, 0.8) ), url("/Images/comic.jpg");
+    transition: all .3s ease-in-out;
+}
+
+    .saved-game-box:hover {
+        box-shadow: 0 0 10px;
+    }
+
+.saved-game-box::before{
+    content: "";
+    height: 30px;
+    width: 100%;
+    background: white;
+    z-index: 50;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 8px 8px 0 0;
+
+}
+
+.saved-game-row{
+    margin: 5px 0 5px 0;
+}
+
+.saved-game-title{
+    font-weight: bold;
+    margin: -5px 0 5px 0;
+    text-align: center;
+    z-index: 51;
+}
+
+.saved-game-id{
+    color: white;
+}
+
+.load-game-button{
+    background: white;
+    cursor: pointer;
+    text-align: center;
+    margin: 5px 65px 5px 65px;
+    border-radius: 12px;
+
+}
+
+.load-game-button a{
+    color: #666666;
+    text-decoration: none;
 }
