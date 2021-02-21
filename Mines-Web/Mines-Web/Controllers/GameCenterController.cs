@@ -43,7 +43,7 @@ namespace Mines_Web.Controllers
             }
         }
 
-
+        
         // GET: GameCenter
         public ActionResult Index()
         {
