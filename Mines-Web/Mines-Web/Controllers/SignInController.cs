@@ -26,16 +26,19 @@ namespace Mines_Web.Controllers
         // GET: SignIn
         public ActionResult Index()
         {
+            logger.Info("The action Index in SignInController has been invoked");
             return View();
         }
 
         public ActionResult RegForm()
         {
+            logger.Info("The action RegForm in SignInController has been invoked");
             return View("RegForm");
         }
 
         public ActionResult SignInForm()
         {
+            logger.Info("The action SignInForm in SignInController has been invoked");
             return View("SignInForm");
         }
 
