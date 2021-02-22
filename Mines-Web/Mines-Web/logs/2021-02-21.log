@@ -13,3 +13,4 @@
 2021-02-21 01:35:34.9226 INFO Initiating action to load the game list for user {test}
 2021-02-21 07:50:09.0285 INFO The user {test} has been authenticated successfully.
 2021-02-21 07:50:09.5491 INFO Initiating action to load the game list for user {test}
+2021-02-21 20:38:42.9069 INFO The action SignInForm in SignInController has been invoked
